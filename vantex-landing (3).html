@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vantex Proyect — Consultoría Internacional en Gestión de Emergencias</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P5SXCWM6MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P5SXCWM6MB');
+</script>
+
+<!-- Stripe -->
+<script src="https://js.stripe.com/v3/"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #080808;
+  --dark: #111111;
+  --card: #161616;
+  --border: #222222;
+  --accent: #E8320A;
+  --accent2: #FF6B35;
+  --white: #F0EDE8;
+  --muted: #888;
+  --green: #2ECC71;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NOISE TEXTURE */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(8,8,8,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 4px;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.nav-logo span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+
+.nav-cta {
+  background: var(--accent);
+  color: var(--white) !important;
+  padding: 10px 24px;
+  border-radius: 2px;
+  font-weight: 600 !important;
+}
+.nav-cta:hover { background: var(--accent2); color: var(--white) !important; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 60% 50%, rgba(232,50,10,0.06) 0%, transparent 70%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232,50,10,0.1);
+  border: 1px solid rgba(232,50,10,0.3);
+  padding: 6px 16px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 32px;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 6vw, 88px);
+  line-height: 0.95;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.hero-title .line2 { color: var(--accent); }
+.hero-title .line3 { color: var(--muted); font-size: 0.6em; letter-spacing: 6px; }
+
+.hero-desc {
+  color: #aaa;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: var(--white);
+  padding: 16px 32px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover { background: var(--accent2); transform: translateY(-2px); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--white);
+  padding: 16px 32px;
+  border-radius: 2px;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-secondary:hover { border-color: var(--white); }
+
+/* HERO RIGHT - TERMINAL */
+.hero-terminal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.terminal-bar {
+  background: var(--dark);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot-r { background: #FF5F56; }
+.dot-y { background: #FFBD2E; }
+.dot-g { background: #27C93F; }
+
+.terminal-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: 8px;
+}
+
+.terminal-body { padding: 24px; }
+
+.terminal-line {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.terminal-line:nth-child(1) { animation-delay: 0.3s; }
+.terminal-line:nth-child(2) { animation-delay: 0.6s; }
+.terminal-line:nth-child(3) { animation-delay: 0.9s; }
+.terminal-line:nth-child(4) { animation-delay: 1.2s; }
+.terminal-line:nth-child(5) { animation-delay: 1.5s; }
+.terminal-line:nth-child(6) { animation-delay: 1.8s; }
+.terminal-line:nth-child(7) { animation-delay: 2.1s; }
+.terminal-line:nth-child(8) { animation-delay: 2.4s; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+.t-prompt { color: var(--accent); }
+.t-cmd { color: var(--white); }
+.t-ok { color: var(--green); }
+.t-val { color: #64B5F6; }
+.t-comment { color: var(--muted); }
+
+/* SECTION BASE */
+section { padding: 100px 40px; position: relative; }
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 4vw, 56px);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.section-desc {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 60px;
+}
+
+/* SERVICES */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.service-card {
+  background: var(--card);
+  padding: 48px 36px;
+  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { background: #1a1a1a; }
+
+.service-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.service-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.service-desc {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.service-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.service-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.service-price span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.service-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  background: var(--accent);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.service-btn:hover { background: var(--accent2); }
+.service-btn:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; }
+
+/* PROCESS */
+.process-section { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background: var(--border);
+}
+
+.process-step { padding: 0 24px; text-align: center; }
+
+.step-num {
+  width: 64px; height: 64px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  background: var(--dark);
+  margin: 0 auto 24px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s;
+}
+
+.process-step:hover .step-num {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.step-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* TRUST */
+.trust-bar {
+  background: var(--accent);
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--white);
+}
+
+/* CONTACT */
+.contact-section { background: var(--dark); border-top: 1px solid var(--border); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+
+.form-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.form-input, .form-textarea, .form-select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--white);
+  padding: 14px 18px;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  border-color: var(--accent);
+}
+
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-select option { background: var(--card); }
+
+.form-submit {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 16px 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.form-submit:hover { background: var(--accent2); }
+
+.contact-info { display: flex; flex-direction: column; gap: 32px; }
+
+.info-block { border-left: 2px solid var(--accent); padding-left: 24px; }
+
+.info-label {
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.info-value {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.info-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* FOOTER */
+footer {
+  background: var(--black);
+  border-top: 1px solid var(--border);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.footer-logo span { color: var(--accent); }
+
+.footer-text {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 48px;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.modal-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.modal-desc {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+#payment-form { display: flex; flex-direction: column; gap: 16px; }
+
+#card-element {
+  background: var(--dark);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 2px;
+}
+
+#card-errors {
+  color: #ff4444;
+  font-size: 13px;
+  min-height: 20px;
+}
+
+#pay-btn {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#pay-btn:hover { background: var(--accent2); }
+#pay-btn:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; }
+
+.secure-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: var(--green);
+  color: #000;
+  padding: 16px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 9999;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.toast.show { transform: translateY(0); opacity: 1; }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 20px 60px; }
+  .hero-content { grid-template-columns: 1fr; gap: 40px; }
+  .hero-terminal { display: none; }
+  section { padding: 60px 20px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .process-steps::before { display: none; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .trust-bar { gap: 24px; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">VANTEX<span>.</span></a>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#contacto" class="nav-cta">Solicitar Diagnóstico</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">Consultoría Internacional · Habla Hispana</div>
+      <h1 class="hero-title">
+        GESTIÓN<br>
+        <span class="line2">DE CRISIS Y</span><br>
+        <span class="line3">EMERGENCIAS</span>
+      </h1>
+      <p class="hero-desc">
+        27 años de experiencia real en emergencias. Diagnósticos, protocolos y herramientas técnicas para empresas de España y Latinoamérica — 100% online, entrega en 48h.
+      </p>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">27</div>
+          <div class="stat-label">Años de experiencia</div>
+        </div>
+        <div>
+          <div class="stat-num">48H</div>
+          <div class="stat-label">Entrega garantizada</div>
+        </div>
+        <div>
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Online · Sin desplazamiento</div>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#servicios" class="btn-primary">Ver servicios →</a>
+        <a href="#contacto" class="btn-secondary">Hablar con el consultor</a>
+      </div>
+    </div>
+    <div class="hero-terminal">
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;overflow:hidden;">
+        <div style="background:var(--accent);padding:24px 32px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;opacity:0.8;margin-bottom:8px;">CONSULTOR EXPERTO</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:2px;">IÑIGO MENDOZA</div>
+          <div style="font-size:14px;opacity:0.85;margin-top:4px;">Especialista en Gestión de Crisis y Emergencias</div>
+        </div>
+        <div style="padding:32px;">
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <div style="display:flex;align-items:flex-start;gap:16px;">
+              <div style="background:rgba(232,50,10,0.15);border:1px solid rgba(232,50,10,0.3);border-radius:2px;padding:8px 12px;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--accent);min-width:60px;text-align:center;">27</div>
+              <div>
+                <div style="font-weight:600;font-size:14px;">Años de experiencia real</div>
+                <div style="font-size:13px;color:var(--muted);margin-top:2px;">Emergencias, crisis y autoprotección empresarial</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:16px;">
+              <div style="background:rgba(232,50,10,0.15);border:1px solid rgba(232,50,10,0.3);border-radius:2px;padding:8px 12px;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--accent);min-width:60px;text-align:center;">48H</div>
+              <div>
+                <div style="font-weight:600;font-size:14px;">Entrega garantizada</div>
+                <div style="font-size:13px;color:var(--muted);margin-top:2px;">Informe completo desde que envías documentación</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:16px;">
+              <div style="background:rgba(232,50,10,0.15);border:1px solid rgba(232,50,10,0.3);border-radius:2px;padding:8px 12px;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--accent);min-width:60px;text-align:center;">5</div>
+              <div>
+                <div style="font-weight:600;font-size:14px;">Países · Habla hispana</div>
+                <div style="font-size:13px;color:var(--muted);margin-top:2px;">España · México · Colombia · Chile · Perú</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:16px;">
+              <div style="background:rgba(232,50,10,0.15);border:1px solid rgba(232,50,10,0.3);border-radius:2px;padding:8px 12px;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--accent);min-width:60px;text-align:center;">✓</div>
+              <div>
+                <div style="font-weight:600;font-size:14px;">100% Online · Sin desplazamientos</div>
+                <div style="font-size:13px;color:var(--muted);margin-top:2px;">Envías documentos · Recibes el informe por email</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">✓ 27 años en emergencias reales</div>
+  <div class="trust-item">✓ Entrega en 48 horas</div>
+  <div class="trust-item">✓ Válido para auditorías</div>
+  <div class="trust-item">✓ España · México · Chile · Colombia · Perú</div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-label">// Servicios</div>
+    <h2 class="section-title">SOLUCIONES PARA TU EMPRESA</h2>
+    <p class="section-desc">Elige el servicio que necesitas. Envías tu documentación, yo analizo y te entrego el informe en 48 horas. Sin reuniones, sin desplazamientos.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon">🔍</div>
+        <div class="service-title">DIAGNÓSTICO DE PREPARACIÓN</div>
+        <div class="service-desc">Evaluación completa del estado de preparación ante emergencias. Identificación de fallos críticos y hoja de ruta de mejoras prioritarias.</div>
+        <div class="service-time">⏱ Entrega en 48h · Envías documentos</div>
+        <div class="service-price">300€ <span>– 700€</span></div>
+        <button class="service-btn" onclick="openModal('diagnostico', 300)">Solicitar diagnóstico →</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon">📋</div>
+        <div class="service-title">PROTOCOLO DE EMERGENCIAS</div>
+        <div class="service-desc">Diseño completo del protocolo de actuación. Roles, responsabilidades, fichas operativas y procedimientos personalizados para tu sector.</div>
+        <div class="service-time">⏱ Entrega en 72h · Envías documentos</div>
+        <div class="service-price">600€ <span>– 1.500€</span></div>
+        <button class="service-btn" onclick="openModal('protocolo', 600)">Solicitar protocolo →</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon">🎯</div>
+        <div class="service-title">GUIÓN DE SIMULACRO</div>
+        <div class="service-desc">Escenario de crisis diseñado para tu empresa. Instrucciones para el equipo, checklist de observación y evaluación posterior del simulacro.</div>
+        <div class="service-time">⏱ Entrega en 48h · Envías documentos</div>
+        <div class="service-price">300€ <span>– 800€</span></div>
+        <button class="service-btn" onclick="openModal('simulacro', 300)">Solicitar guión →</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" class="process-section">
+  <div class="container">
+    <div class="section-label">// Proceso</div>
+    <h2 class="section-title">CÓMO FUNCIONA</h2>
+    <p class="section-desc">Sin reuniones ni desplazamientos. Todo online en 4 pasos.</p>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Selecciona el servicio</div>
+        <div class="step-desc">Elige el diagnóstico que necesita tu empresa y realiza el pago seguro online.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Envías documentos</div>
+        <div class="step-desc">Recibes un email con instrucciones. Adjuntas la documentación de tu empresa.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Análisis experto</div>
+        <div class="step-desc">27 años de experiencia real analizando tu situación. Sin plantillas genéricas.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Informe en 48h</div>
+        <div class="step-desc">Recibes el informe completo por email. Listo para auditorías y cumplimiento legal.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- METODOLOGIA -->
+<section id="metodologia" style="background:var(--black);border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">// Metodología</div>
+    <h2 class="section-title">QUÉ NECESITAS ENVIARNOS</h2>
+    <p class="section-desc">Sin visitas, sin reuniones. Nos envías la documentación y nosotros hacemos el trabajo.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+      <div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);padding:24px 28px;border-radius:2px;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;margin-bottom:8px;">📄 Documentación básica</div>
+            <div style="color:var(--muted);font-size:14px;line-height:1.8;">
+              · Descripción de la actividad de tu empresa<br>
+              · Número aproximado de personas en el edificio<br>
+              · Plano o descripción del espacio (foto válida)<br>
+              · Plan de emergencia actual si existe
+            </div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);padding:24px 28px;border-radius:2px;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;margin-bottom:8px;">🔥 Medios de protección</div>
+            <div style="color:var(--muted);font-size:14px;line-height:1.8;">
+              · Extintores: ¿existen? ¿cuántos?<br>
+              · Bocas de incendio, rociadores, detectores<br>
+              · Señalización de emergencia<br>
+              · Formación del personal en emergencias
+            </div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);padding:24px 28px;border-radius:2px;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;margin-bottom:8px;">📋 Historial de simulacros</div>
+            <div style="color:var(--muted);font-size:14px;line-height:1.8;">
+              · ¿Se han realizado simulacros?<br>
+              · ¿Existe registro de incidentes?<br>
+              · ¿Hay brigada o equipo de emergencias?
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <!-- AVISO LEGAL -->
+        <div style="background:rgba(232,50,10,0.06);border:1px solid rgba(232,50,10,0.25);border-radius:4px;padding:32px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--accent);margin-bottom:16px;">⚠️ IMPORTANTE — LEE ANTES DE CONTRATAR</div>
+          <div style="font-size:14px;line-height:1.8;color:#ccc;">
+            Nuestros diagnósticos evalúan la <strong>preparación operativa real</strong> ante emergencias: protocolos, formación, medios de protección y organización interna.<br><br>
+            <strong>No sustituyen a la auditoría legal local.</strong> Cada país y sector puede tener normativa específica a la que tu empresa debe cumplir — te recomendamos verificar con un técnico habilitado local.<br><br>
+            Lo que sí hacemos: identificar los <strong>fallos críticos reales</strong> que ninguna normativa perdona y que pueden costar vidas. Eso es lo que más valor aporta.
+          </div>
+        </div>
+
+        <!-- PROCESO RAPIDO -->
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:32px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;margin-bottom:20px;">⚡ PROCESO EN 4 PASOS</div>
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="background:var(--accent);color:white;font-family:'Bebas Neue',sans-serif;font-size:16px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+              <div style="font-size:14px;color:var(--muted);">Realizas el pago online — recibes confirmación inmediata</div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="background:var(--accent);color:white;font-family:'Bebas Neue',sans-serif;font-size:16px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+              <div style="font-size:14px;color:var(--muted);">Recibes email con instrucciones para enviar tu documentación</div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="background:var(--accent);color:white;font-family:'Bebas Neue',sans-serif;font-size:16px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+              <div style="font-size:14px;color:var(--muted);">Nuestro equipo analiza tu situación con 27 años de experiencia real</div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div style="background:var(--green);color:#000;font-family:'Bebas Neue',sans-serif;font-size:16px;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✓</div>
+              <div style="font-size:14px;color:var(--muted);">Recibes tu informe completo por email en máximo 48 horas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contact-section">
+  <div class="container">
+    <div class="section-label">// Contacto</div>
+    <h2 class="section-title">HABLA CON EL CONSULTOR</h2>
+
+    <div class="contact-grid">
+      <form class="contact-form" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label class="form-label">Nombre y empresa</label>
+          <input type="text" class="form-input" id="cf-nombre" placeholder="Tu nombre · Empresa" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" id="cf-email" placeholder="email@empresa.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">País</label>
+          <select class="form-select" id="cf-pais">
+            <option>España</option>
+            <option>México</option>
+            <option>Colombia</option>
+            <option>Chile</option>
+            <option>Perú</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Sector</label>
+          <select class="form-select" id="cf-sector">
+            <option>Hotel / Hostelería</option>
+            <option>Colegio / Centro educativo</option>
+            <option>Clínica / Sanidad</option>
+            <option>Logística / Transporte</option>
+            <option>Industria / Almacén</option>
+            <option>Oficinas / Coworking</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mensaje</label>
+          <textarea class="form-textarea" id="cf-mensaje" placeholder="Cuéntame brevemente la situación de tu empresa..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Enviar mensaje →</button>
+      </form>
+
+      <div class="contact-info">
+        <div class="info-block">
+          <div class="info-label">Consultor</div>
+          <div class="info-value">Iñigo Mendoza Aizpurua</div>
+          <div class="info-desc">27 años de experiencia en gestión de emergencias reales</div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Email</div>
+          <div class="info-value">vantex.proyect@gmail.com</div>
+          <div class="info-desc">Respuesta en menos de 24 horas</div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Teléfono / WhatsApp</div>
+          <div class="info-value">+34 609 766 854</div>
+          <div class="info-desc">España · También por WhatsApp</div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Mercado</div>
+          <div class="info-value">España · México · Chile · Colombia · Perú</div>
+          <div class="info-desc">100% online — sin límites geográficos</div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Entrega</div>
+          <div class="info-value">48 horas garantizadas</div>
+          <div class="info-desc">Desde que recibes confirmación de pago</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">VANTEX<span>.</span></div>
+  <div class="footer-text">© 2026 Vantex Proyect · Consultoría Internacional en Gestión de Emergencias</div>
+  <div class="footer-text">vantex.proyect@gmail.com · +34 609 766 854</div>
+</footer>
+
+<!-- MODAL PAGO -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOut(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-title" id="modal-title">DIAGNÓSTICO</div>
+    <div class="modal-price" id="modal-price">300€</div>
+    <div class="modal-desc" id="modal-desc">Evaluación completa. Envías tu documentación y recibes el informe en 48 horas.</div>
+    <form id="payment-form">
+      <div class="form-group">
+        <label class="form-label">Email (para recibir el informe)</label>
+        <input type="email" class="form-input" id="pay-email" placeholder="email@empresa.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Empresa</label>
+        <input type="text" class="form-input" id="pay-empresa" placeholder="Nombre de tu empresa" required>
+      </div>
+      <div id="card-element"></div>
+      <div id="card-errors"></div>
+      <button type="submit" id="pay-btn">Pagar y solicitar →</button>
+      <div class="secure-badge">🔒 Pago seguro con Stripe · Cifrado SSL</div>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+const stripe = Stripe('pk_live_51T9oJMH4JeCdyhswXSQhUAdjM8ZofOuJLTTbAiCzpWMXPxAwDmhewPQqmAQny7H1dkRq2eXGXkBaX1j3uyzhTXvM00GO7mD4zA');
+const elements = stripe.elements();
+const cardElement = elements.create('card', {
+  style: {
+    base: {
+      color: '#F0EDE8',
+      fontFamily: 'DM Sans, sans-serif',
+      fontSize: '15px',
+      '::placeholder': { color: '#666' }
+    },
+    invalid: { color: '#ff4444' }
+  }
+});
+cardElement.mount('#card-element');
+
+cardElement.on('change', e => {
+  document.getElementById('card-errors').textContent = e.error ? e.error.message : '';
+});
+
+let currentService = '';
+let currentPrice = 0;
+
+const services = {
+  diagnostico: {
+    title: 'DIAGNÓSTICO DE PREPARACIÓN',
+    price: '300€',
+    desc: 'Evaluación completa del estado de preparación ante emergencias. Recibirás un email con instrucciones para enviar tu documentación. Entrega del informe en 48 horas.'
+  },
+  protocolo: {
+    title: 'PROTOCOLO DE EMERGENCIAS',
+    price: '600€',
+    desc: 'Diseño completo del protocolo personalizado para tu empresa. Recibirás instrucciones por email para enviar la documentación necesaria. Entrega en 72 horas.'
+  },
+  simulacro: {
+    title: 'GUIÓN DE SIMULACRO',
+    price: '300€',
+    desc: 'Escenario de crisis diseñado específicamente para tu empresa. Recibirás instrucciones por email. Entrega del guión completo en 48 horas.'
+  }
+};
+
+function openModal(service, price) {
+  currentService = service;
+  currentPrice = price;
+  const s = services[service];
+  document.getElementById('modal-title').textContent = s.title;
+  document.getElementById('modal-price').textContent = s.price;
+  document.getElementById('modal-desc').textContent = s.desc;
+  document.getElementById('modal-overlay').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+}
+
+function closeModalOut(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+document.getElementById('payment-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('pay-btn');
+  btn.disabled = true;
+  btn.textContent = 'Procesando...';
+
+  const email = document.getElementById('pay-email').value;
+  const empresa = document.getElementById('pay-empresa').value;
+
+  const { paymentMethod, error } = await stripe.createPaymentMethod({
+    type: 'card',
+    card: cardElement,
+    billing_details: { email, name: empresa }
+  });
+
+  if (error) {
+    document.getElementById('card-errors').textContent = error.message;
+    btn.disabled = false;
+    btn.textContent = 'Pagar y solicitar →';
+    return;
+  }
+
+  // Notificación por email (mailto fallback)
+  const subject = encodeURIComponent(`NUEVO PEDIDO: ${services[currentService].title} — ${empresa}`);
+  const body = encodeURIComponent(`Nuevo pedido recibido:\n\nServicio: ${services[currentService].title}\nPrecio: ${services[currentService].price}\nEmpresa: ${empresa}\nEmail cliente: ${email}\nPayment Method ID: ${paymentMethod.id}\n\nContactar al cliente para solicitar documentación.`);
+  
+  showToast('✓ Solicitud enviada — recibirás un email en breve');
+  closeModal();
+  
+  setTimeout(() => {
+    window.location.href = `mailto:vantex.proyect@gmail.com?subject=${subject}&body=${body}`;
+  }, 1500);
+
+  btn.disabled = false;
+  btn.textContent = 'Pagar y solicitar →';
+});
+
+function submitForm(e) {
+  e.preventDefault();
+  const nombre = document.getElementById('cf-nombre').value;
+  const email = document.getElementById('cf-email').value;
+  const pais = document.getElementById('cf-pais').value;
+  const sector = document.getElementById('cf-sector').value;
+  const mensaje = document.getElementById('cf-mensaje').value;
+
+  const subject = encodeURIComponent(`Consulta Vantex — ${nombre} · ${sector} · ${pais}`);
+  const body = encodeURIComponent(`Nombre: ${nombre}\nEmail: ${email}\nPaís: ${pais}\nSector: ${sector}\n\nMensaje:\n${mensaje}`);
+  
+  window.location.href = `mailto:vantex.proyect@gmail.com?subject=${subject}&body=${body}`;
+  showToast('✓ Abriendo tu cliente de email...');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+</script>
+</body>
+</html>
