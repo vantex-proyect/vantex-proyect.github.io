@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vantex Proyect — Expert Crisis Management</title>
+    <title>Vantex Proyect — High-Stakes Crisis Engineering</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5SXCWM6MB"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P5SXCWM6MB');</script>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -19,4 +19,79 @@
         .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(45px, 8vw, 85px); line-height: 0.9; margin-bottom: 20px; }
         .hero-title span { color: var(--accent); }
         .hero-terminal { background: var(--card); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
-        .terminal-header { background: var
+        .terminal-header { background: var(--accent); padding: 20px; font-family: 'Bebas Neue', sans-serif; }
+        .terminal-body { padding: 30px; display: flex; flex-direction: column; gap: 20px; }
+        .stat-item { display: flex; align-items: center; gap: 15px; }
+        .stat-box { background: rgba(232,50,10,0.1); border: 1px solid var(--accent); padding: 10px; min-width: 60px; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--accent); }
+        .services { padding: 80px 40px; max-width: 1200px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+        .service-card { background: var(--card); padding: 40px; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: space-between; }
+        .price { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--accent); margin: 15px 0; }
+        .btn { display: inline-block; padding: 15px 30px; background: var(--accent); color: white; text-decoration: none; font-weight: bold; text-align: center; border: none; cursor: pointer; width: 100%; box-sizing: border-box; font-size: 14px; }
+        .contact { background: var(--dark); padding: 80px 40px; border-top: 1px solid var(--border); }
+        .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .form-input { width: 100%; padding: 15px; background: var(--black); border: 1px solid var(--border); color: white; box-sizing: border-box; margin-bottom: 15px; font-family: inherit; }
+        @media (max-width: 768px) { .hero-container, .services-grid, .contact-container { grid-template-columns: 1fr; } .hero { padding: 100px 20px; text-align: center; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="nav-logo">VANTEX<span>.</span></a>
+        <div><a href="#contacto" class="btn" style="width:auto;">ESTRATEGIA DIRECTA</a></div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-container">
+            <div>
+                <h1 class="hero-title">INGENIERÍA DE<br><span>CRISIS Y</span><br>RESPUESTA</h1>
+                <p style="font-size:18px; color:var(--muted); max-width:500px;">Consultoría técnica de alto impacto. 27 años de especialización en entornos de alta criticidad donde el error no es una opción.</p>
+                <a href="#servicios" class="btn" style="width:auto; margin-top:20px;">DESPLEGAR SERVICIOS →</a>
+            </div>
+            <div class="hero-terminal">
+                <div class="terminal-header">
+                    <div style="font-size:12px; letter-spacing:2px;">SENIOR STRATEGIST</div>
+                    <div style="font-size:32px; letter-spacing:1px;">IÑIGO MENDOZA</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="stat-item">
+                        <div class="stat-box">27</div>
+                        <div><strong>Años de Comando</strong><br><small style="color:var(--muted)">Gestión operativa en situaciones límite</small></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-box">48H</div>
+                        <div><strong>Auditoría Técnica</strong><br><small style="color:var(--muted)">Entrega de diagnóstico de alta resolución</small></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-box">WW</div>
+                        <div><strong>International Ops</strong><br><small style="color:var(--muted)">Soporte global ante crisis inminentes</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <h2 style="font-family:'Bebas Neue'; font-size:40px; text-align:center;">INVERSIÓN EN RESILIENCIA TÉCNICA</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div>
+                    <h3 style="font-family:'Bebas Neue'; font-size:24px;">DIAGNÓSTICO CRÍTICO</h3>
+                    <div class="price">300€</div>
+                    <p style="color:var(--muted); font-size:14px; margin-bottom:20px;">Identificación quirúrgica de vulnerabilidades. Un análisis de brechas que previene colapsos operativos antes de que el riesgo se materialice.</p>
+                </div>
+                <a href="#contacto" class="btn">SOLICITAR ANÁLISIS</a>
+            </div>
+            <div class="service-card">
+                <div>
+                    <h3 style="font-family:'Bebas Neue'; font-size:24px;">ARQUITECTURA DE RESPUESTA</h3>
+                    <div class="price">600€</div>
+                    <p style="color:var(--muted); font-size:14px; margin-bottom:20px;">Diseño de protocolos de mando y acción. Estructuras de decisión robustas orientadas a minimizar daños y asegurar la continuidad del negocio.</p>
+                </div>
+                <a href="#contacto" class="btn">SOLICITAR PROTOCOLO</a>
+            </div>
+            <div class="service-card">
+                <div>
+                    <h3 style="font-family:'Bebas Neue'; font-size:24px;">ESCENARIOS DE CRISIS</h3>
+                    <div class="price">300€</div>
+                    <p style="color:var(--muted); font-size:1
