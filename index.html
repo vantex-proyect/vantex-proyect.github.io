@@ -310,21 +310,32 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
     <div class="section-label">// Contacto</div>
     <h2 class="section-title">SOLICITAR INFORMACIÓN</h2>
     <div class="contact-grid">
-      <form class="contact-form" onsubmit="handleForm(event)">
-        <input type="text" class="form-input" placeholder="Nombre y Empresa" required>
-        <input type="email" class="form-input" placeholder="Email" required>
-        <textarea class="form-textarea" placeholder="¿En qué podemos ayudarte?" style="min-height:120px;"></textarea>
-        <button type="submit" class="form-submit">ENVIAR SOLICITUD</button>
+      <form class="contact-form" action="https://formspree.io/f/xvgzlowj" method="POST">
+        <div style="margin-bottom: 15px;">
+          <label style="font-size: 12px; color: var(--muted); display: block; margin-bottom: 5px;">Nombre y Empresa</label>
+          <input type="text" name="nombre" class="form-input" placeholder="Tu nombre y empresa" required>
+        </div>
+        <div style="margin-bottom: 15px;">
+          <label style="font-size: 12px; color: var(--muted); display: block; margin-bottom: 5px;">Email de contacto</label>
+          <input type="email" name="email" class="form-input" placeholder="tu@email.com" required>
+        </div>
+        <div style="margin-bottom: 15px;">
+          <label style="font-size: 12px; color: var(--muted); display: block; margin-bottom: 5px;">Mensaje / Necesidad</label>
+          <textarea name="mensaje" class="form-textarea" placeholder="¿En qué podemos ayudarte?" style="min-height:120px;" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">ENVIAR SOLICITUD POR EMAIL</button>
       </form>
+
       <div class="contact-info">
         <div class="info-block">
           <div class="info-label">Email Directo</div>
-          <div>consultoria@vantexproyect.com</div>
+          <div style="font-size: 18px; font-weight: 600;">vantex.proyect@gmail.com</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 5px;">Atención prioritaria en menos de 12h</div>
         </div>
         <div class="info-block">
-          <div class="info-label">Consultor</div>
-          <div>Iñigo Mendoza</div>
-          <div style="font-size:12px; color:var(--muted)">Acreditación Gobierno Vasco GT-00333</div>
+          <div class="info-label">Consultor Acreditado</div>
+          <div style="font-size: 18px; font-weight: 600;">Iñigo Mendoza</div>
+          <div style="font-size: 13px; color: var(--muted); margin-top: 5px;">Técnico Superior en Prevención (FP Donostia)<br>Acreditación Gobierno Vasco GT-00333</div>
         </div>
       </div>
     </div>
@@ -333,17 +344,12 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
 
 <footer>
   <div class="footer-logo">VANTEX<span>.</span></div>
-  <div class="footer-text">© 2026 Vantex Proyect. Todos los derechos reservados.</div>
+  <div class="footer-text">© 2026 Vantex Proyect — Consultoría Premium en Gestión de Riesgos.</div>
 </footer>
 
 <script>
   function scrollToContact() {
-    document.getElementById('contacto').scrollIntoView();
-  }
-  function handleForm(e) {
-    e.preventDefault();
-    alert("Mensaje enviado correctamente. El consultor contactará con usted en breve.");
-    e.target.reset();
+    document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
   }
 </script>
 
