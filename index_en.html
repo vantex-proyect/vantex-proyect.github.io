@@ -1,111 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5SXCWM6MB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-P5SXCWM6MB');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vantex Proyect — Technical Consultancy in Crisis Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --black: #080808; --dark: #121212; --accent: #E8320A; --white: #F0EDE8; --muted: #888; }
-        body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; margin: 0; padding-top: 80px; scroll-behavior: smooth; }
-        nav { position: fixed; top: 0; width: 100%; height: 80px; background: rgba(8,8,8,0.98); border-bottom: 1px solid #222; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; box-sizing: border-box; z-index: 1000; }
-        .logo { font-family: 'Bebas Neue'; font-size: 32px; letter-spacing: 2px; }
-        .logo span { color: var(--accent); }
-        .lang-selector { font-size: 14px; font-weight: bold; letter-spacing: 1px; }
-        .lang-selector a { color: var(--white); text-decoration: none; opacity: 0.4; transition: 0.3s; }
-        .lang-selector a.active { opacity: 1; color: var(--accent); border-bottom: 2px solid var(--accent); }
-        .hero { padding: 120px 20px; text-align: center; max-width: 1100px; margin: 0 auto; }
-        .badge { color: var(--accent); font-weight: bold; letter-spacing: 4px; font-size: 13px; margin-bottom: 15px; display: block; }
-        h1 { font-family: 'Bebas Neue'; font-size: clamp(50px, 12vw, 95px); line-height: 0.85; margin: 0 0 25px 0; }
-        h1 span { color: var(--accent); }
-        .hero-text { font-size: 20px; color: var(--muted); max-width: 800px; margin: 0 auto; line-height: 1.5; }
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; padding: 60px 40px; max-width: 1300px; margin: 0 auto; }
-        .card { background: var(--dark); padding: 50px 40px; border: 1px solid #222; display: flex; flex-direction: column; justify-content: space-between; transition: 0.4s; }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .card h3 { font-family: 'Bebas Neue'; font-size: 30px; margin: 0 0 15px 0; letter-spacing: 1px; }
-        .price { font-family: 'Bebas Neue'; font-size: 48px; color: var(--accent); margin: 20px 0; border-top: 1px solid #333; padding-top: 20px; }
-        .price span { font-size: 14px; color: var(--muted); font-family: 'DM Sans'; letter-spacing: 1px; }
-        .btn { display: inline-block; padding: 22px 35px; background: var(--accent); color: white; text-decoration: none; font-weight: bold; width: 100%; box-sizing: border-box; border: none; cursor: pointer; text-align: center; font-size: 14px; letter-spacing: 2px; transition: 0.3s; }
-        .btn:hover { background: #ff3c00; box-shadow: 0 10px 20px rgba(232, 50, 10, 0.2); }
-        .trust-bar { background: #0c0c0c; padding: 60px 20px; text-align: center; border-top: 1px solid #222; border-bottom: 1px solid #222; }
-        .accreditation-grid { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
-        .acc-item { font-weight: bold; font-size: 16px; border-left: 2px solid var(--accent); padding-left: 15px; text-align: left; }
-        .legal-note { max-width: 900px; margin: 60px auto; padding: 40px; border: 1px solid #222; background: #0a0a0a; color: var(--muted); font-size: 14px; text-align: justify; line-height: 1.8; border-left: 4px solid var(--accent); }
-        .contact { background: #000; padding: 100px 20px; text-align: center; }
-        .contact-box { max-width: 650px; margin: 0 auto; }
-        input, textarea { width: 100%; padding: 20px; margin-bottom: 20px; background: #111; border: 1px solid #222; color: #fff; font-family: inherit; box-sizing: border-box; }
-        footer { padding: 80px 40px; text-align: center; color: var(--muted); font-size: 12px; border-top: 1px solid #222; }
-    </style>
+    <title>Vantex Proyect - Crisis Management & Operational Engineering</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
         <div class="logo">VANTEX<span>.</span></div>
-        <div class="lang-selector">
-            <a href="index.html">ES</a> &nbsp;|&nbsp; <a href="#" class="active">EN</a>
+        <div class="nav-links">
+            <a href="index.html" class="lang-switch">ES</a>
         </div>
     </nav>
+
     <header class="hero">
-        <span class="badge">HIGH-COMPLEXITY TECHNICAL CONSULTANCY</span>
-        <h1>OPERATIONAL ENGINEERING AND<br><span>CRISIS MANAGEMENT</span></h1>
-        <p class="hero-text">Based on 27 years of experience in real-world emergencies and human conflict resolution. If it can happen, it will; our mission is to protect people and assets through resilience systems and command protocols.</p>
+        <div class="hero-content">
+            <h1>Operational Engineering for High-Complexity Scenarios</h1>
+            <p>27 years of experience in crisis management, technical self-protection, and human conflict resolution on the ground.</p>
+            <div class="cta-group">
+                <a href="#contact" class="btn-primary">Premium Consulting</a>
+                <a href="#services" class="btn-secondary">Tactical Services</a>
+            </div>
+        </div>
     </header>
-    <section class="services">
-        <div class="card">
-            <div>
-                <h3>TACTICAL DIAGNOSIS</h3>
-                <p style="color: var(--muted);">Assessment of vulnerabilities and operational risks. We identify critical gaps before they turn into real-world incidents.</p>
-                <div class="price"><span>FROM</span> 300€ <span>/ ASSESSMENT</span></div>
-            </div>
-            <a href="#contact" class="btn" onclick="setSubject('Tactical Diagnosis')">REQUEST TECHNICAL ASSESSMENT</a>
+
+    <section id="services" class="services">
+        <div class="service-card">
+            <h3>Technical Self-Protection</h3>
+            <p>Preparation and auditing of self-protection plans with official accreditation (GT-00333).</p>
         </div>
-        <div class="card">
-            <div>
-                <h3>COMMAND ARCHITECTURE</h3>
-                <p style="color: var(--muted);">Design of decision-making protocols under extreme pressure. We structure your organization for an immediate response.</p>
-                <div class="price"><span>FROM</span> 600€ <span>/ PROTOCOLO</span></div>
-            </div>
-            <a href="#contact" class="btn" onclick="setSubject('Command Architecture')">DESIGN TACTICAL PLAN</a>
+        <div class="service-card">
+            <h3>Crisis Management</h3>
+            <p>Command and control architecture for critical infrastructure and complex organizations.</p>
         </div>
-        <div class="card">
-            <div>
-                <h3>TECHNICAL SIMULATION</h3>
-                <p style="color: var(--muted);">Training executive teams through real-world scenario engineering. We validate your operational response capability.</p>
-                <div class="price"><span>FROM</span> 300€ <span>/ SESSION</span></div>
-            </div>
-            <a href="#contact" class="btn" onclick="setSubject('Technical Simulation')">REQUEST CRISIS SCENARIO</a>
+        <div class="service-card">
+            <h3>Conflict Resolution</h3>
+            <p>Technical intervention and operational mediation in high-tension and high-risk environments.</p>
         </div>
     </section>
-    <section class="trust-bar">
-        <div class="accreditation-grid">
-            <div class="acc-item">OFFICIALLY ACCREDITED TECHNICIAN<br><span style="color: var(--muted); font-size: 12px;">Ref: GT-00333 (Basque Government)</span></div>
-            <div class="acc-item">AUTOMATED PAYMENT MANAGEMENT<br><span style="color: var(--muted); font-size: 12px;">Immediate Invoicing and Settlement</span></div>
-            <div class="acc-item">INTERNATIONAL FRAMEWORK<br><span style="color: var(--muted); font-size: 12px;">Global Security Standards</span></div>
-        </div>
+
+    <section id="contact" class="contact">
+        <h2>Direct Contact</h2>
+        <p>Let's establish your organization's line of defense.</p>
+        <form action="https://formspree.io/f/xvgzlowj" method="POST">
+            <input type="email" name="email" placeholder="Corporate Email" required>
+            <textarea name="message" placeholder="Briefly describe the situation or technical need" required></textarea>
+            <button type="submit" class="btn-primary">Send Requirement</button>
+        </form>
     </section>
-    <div class="legal-note">
-        <strong>PROFESSIONAL RIGOR:</strong> Vantex Proyect operates under technical operational engineering standards. As a Technician Accredited by the Basque Government, all services comply with the technical excellence required in high-complexity environments for the protection of people and assets.
-    </div>
-    <section class="contact" id="contact">
-        <div class="contact-box">
-            <h2 style="font-family: 'Bebas Neue';">PRIVATE CONSULTANCY</h2>
-            <p style="color: var(--muted); margin-bottom: 40px;">Initiate your organization's protection process.</p>
-            <form action="https://formspree.io/f/mlgpwdkk" method="POST">
-                <input type="text" name="name" placeholder="Full Name / Organization" required>
-                <input type="email" name="email" placeholder="Corporate Contact Email" required>
-                <textarea id="message-box" name="message" placeholder="Describe the area requiring technical intervention or audit..." rows="5" required></textarea>
-                <button type="submit" class="btn">SEND ASSESSMENT REQUEST</button>
-            </form>
-        </div>
-    </section>
+
     <footer>
-        © 2026 VANTEX PROYECT · GLOBAL EMERGENCY AND CRISIS MANAGEMENT
+        <p>&copy; 2024 Vantex Proyect. Operational Engineering. Basque Country.</p>
     </footer>
-    <script>
-        function setSubject(subject) {
-            const messageBox = document.getElementById('message-box');
-            messageBox.value = "Dear Iñigo,\n\nI am contacting you regarding an interest in " + subject + ".\n\n[Please detail your inquiry here...]";
-            messageBox.focus();
-        }
-    </script>
 </body>
 </html>
