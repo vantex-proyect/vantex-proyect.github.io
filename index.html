@@ -11,8 +11,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vantex Proyect - Gestión de Crisis</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #FF4500; --dark: #0a0a0a; --light: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--light); }
+        nav { padding: 1.5rem 5%; display: flex; justify-content: space-between; border-bottom: 1px solid #222; }
+        .logo { font-weight: 700; font-size: 1.5rem; }
+        .logo span { color: var(--primary); }
+        .lang-switch { color: var(--light); text-decoration: none; border: 1px solid var(--primary); padding: 5px 10px; border-radius: 4px; }
+        .hero { padding: 80px 5%; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1454165833767-027ff33027b0?q=80&w=2070'); background-size: cover; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .btn-primary { background: var(--primary); color: white; padding: 1rem 2rem; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block; border: none; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px 5%; background: #111; }
+        .service-card { padding: 20px; border-top: 3px solid var(--primary); background: #1a1a1a; border-radius: 4px; }
+        .service-card h3 { color: var(--primary); margin-bottom: 10px; }
+        .contact { padding: 40px 5%; max-width: 600px; margin: 0 auto; }
+        form { display: flex; flex-direction: column; gap: 10px; }
+        input, textarea { padding: 10px; background: #111; border: 1px solid #333; color: white; border-radius: 4px; }
+        textarea { height: 100px; }
+    </style>
 </head>
 <body>
     <nav>
