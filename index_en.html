@@ -19,7 +19,7 @@
         .logo { font-family: 'Bebas Neue'; font-size: 32px; letter-spacing: 2px; }
         .logo span { color: var(--accent); }
         .lang-selector { font-size: 14px; font-weight: bold; letter-spacing: 1px; }
-        .lang-selector a { color: var(--white); text-decoration: none; opacity: 0.4; transition: 0.3s; }
+        .lang-selector a { color: var(--white); text-decoration: none; opacity: 0.4; transition: 0.3s; padding: 5px 10px; }
         .lang-selector a.active { opacity: 1; color: var(--accent); border-bottom: 2px solid var(--accent); }
         .hero { padding: 120px 20px; text-align: center; max-width: 1100px; margin: 0 auto; }
         .badge { color: var(--accent); font-weight: bold; letter-spacing: 4px; font-size: 13px; margin-bottom: 15px; display: block; }
@@ -48,13 +48,13 @@
     <nav>
         <div class="logo">VANTEX<span>.</span></div>
         <div class="lang-selector">
-            <a href="index.html">ES</a> &nbsp;|&nbsp; <a href="#" class="active">EN</a>
+            <a href="index.html">ES</a> &nbsp;|&nbsp; <a href="index_en.html" class="active">EN</a>
         </div>
     </nav>
     <header class="hero">
         <span class="badge">HIGH-COMPLEXITY TECHNICAL CONSULTING</span>
         <h1>OPERATIONAL ENGINEERING AND<br><span>CRISIS MANAGEMENT</span></h1>
-        <p class="hero-text">Based on 27 years of experience in real emergencies and human conflict resolution. If it can happen, it will; our mission is to protect people and assets through resilience systems and command protocols.</p>
+        <p class="hero-text">Built on 27 years of real-world emergency experience and human conflict resolution. If it can happen, it will; our mission is to protect people and assets through resilience systems and command protocols.</p>
     </header>
     <section class="services">
         <div class="card">
@@ -107,7 +107,6 @@
     <footer>
         © 2026 VANTEX PROYECT · GLOBAL EMERGENCY AND CRISIS MANAGEMENT
     </footer>
-
     <script>
         function setSubject(subject) {
             const messageBox = document.getElementById('message-box');
