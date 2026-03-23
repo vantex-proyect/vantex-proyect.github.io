@@ -1,118 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5SXCWM6MB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-P5SXCWM6MB');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vantex Proyect — Consultoría Técnica en Gestión de Crisis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>VANTEX - Validación de Activos Críticos | Acreditación GT-00333</title>
     <style>
-        :root { --black: #080808; --dark: #121212; --accent: #E8320A; --white: #F0EDE8; --muted: #888; }
-        body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; margin: 0; padding-top: 80px; scroll-behavior: smooth; }
-        nav { position: fixed; top: 0; width: 100%; height: 80px; background: rgba(8,8,8,0.98); border-bottom: 1px solid #222; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; box-sizing: border-box; z-index: 1000; }
-        .logo { font-family: 'Bebas Neue'; font-size: 32px; letter-spacing: 2px; }
-        .logo span { color: var(--accent); }
-        .lang-selector { font-size: 14px; font-weight: bold; letter-spacing: 1px; }
-        .lang-selector a { color: var(--white); text-decoration: none; opacity: 0.4; transition: 0.3s; padding: 5px 10px; }
-        .lang-selector a.active { opacity: 1; color: var(--accent); border-bottom: 2px solid var(--accent); }
-        .hero { padding: 120px 20px; text-align: center; max-width: 1100px; margin: 0 auto; }
-        .badge { color: var(--accent); font-weight: bold; letter-spacing: 4px; font-size: 13px; margin-bottom: 15px; display: block; }
-        h1 { font-family: 'Bebas Neue'; font-size: clamp(50px, 12vw, 95px); line-height: 0.85; margin: 0 0 25px 0; }
-        h1 span { color: var(--accent); }
-        .hero-text { font-size: 20px; color: var(--muted); max-width: 800px; margin: 0 auto; line-height: 1.5; }
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; padding: 60px 40px; max-width: 1300px; margin: 0 auto; }
-        .card { background: var(--dark); padding: 50px 40px; border: 1px solid #222; display: flex; flex-direction: column; justify-content: space-between; transition: 0.4s; }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .card h3 { font-family: 'Bebas Neue'; font-size: 30px; margin: 0 0 15px 0; letter-spacing: 1px; }
-        .price { font-family: 'Bebas Neue'; font-size: 48px; color: var(--accent); margin: 20px 0; border-top: 1px solid #333; padding-top: 20px; }
-        .price span { font-size: 14px; color: var(--muted); font-family: 'DM Sans'; letter-spacing: 1px; }
-        .btn { display: inline-block; padding: 22px 35px; background: var(--accent); color: white; text-decoration: none; font-weight: bold; width: 100%; box-sizing: border-box; border: none; cursor: pointer; text-align: center; font-size: 14px; letter-spacing: 2px; transition: 0.3s; }
-        .btn:hover { background: #ff3c00; box-shadow: 0 10px 20px rgba(232, 50, 10, 0.2); }
-        .trust-bar { background: #0c0c0c; padding: 60px 20px; text-align: center; border-top: 1px solid #222; border-bottom: 1px solid #222; }
-        .accreditation-grid { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
-        .acc-item { font-weight: bold; font-size: 16px; border-left: 2px solid var(--accent); padding-left: 15px; text-align: left; }
-        .legal-note { max-width: 900px; margin: 60px auto; padding: 40px; border: 1px solid #222; background: #0a0a0a; color: var(--muted); font-size: 14px; text-align: justify; line-height: 1.8; border-left: 4px solid var(--accent); }
-        .contact { background: #000; padding: 100px 20px; text-align: center; }
-        .contact-box { max-width: 650px; margin: 0 auto; }
-        input, textarea { width: 100%; padding: 20px; margin-bottom: 20px; background: #111; border: 1px solid #222; color: #fff; font-family: inherit; box-sizing: border-box; }
-        footer { padding: 80px 40px; text-align: center; color: var(--muted); font-size: 12px; border-top: 1px solid #222; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0a0e27; color: #e0e0e0; line-height: 1.6; margin: 0; }
+        header { background: rgba(10, 14, 39, 0.95); border-bottom: 2px solid #ff8c00; padding: 20px; text-align: center; }
+        .hero { padding: 80px 20px; text-align: center; background: linear-gradient(rgba(10,14,39,0.8), rgba(10,14,39,0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80'); background-size: cover; }
+        h1 { color: #ff8c00; font-size: 2.5em; margin-bottom: 10px; }
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        .card { background: #1a1f3a; border: 1px solid #333; padding: 30px; margin-bottom: 20px; border-radius: 8px; }
+        .btn { background: #ff8c00; color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
+        footer { background: #05071a; padding: 40px; text-align: center; border-top: 1px solid #333; }
+        .acreditacion { color: #ff8c00; font-weight: bold; }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">VANTEX<span>.</span></div>
-        <div class="lang-selector">
-            <a href="index.html" class="active">ES</a> &nbsp;|&nbsp; <a href="index_en.html">EN</a>
-        </div>
-    </nav>
-    <header class="hero">
-        <span class="badge">CONSULTORÍA TÉCNICA DE ALTA COMPLEJIDAD</span>
-        <h1>INGENIERÍA OPERATIVA Y<br><span>GESTIÓN DE CRISIS</span></h1>
-        <p class="hero-text">Basado en 27 años de experiencia en emergencias reales y resolución de conflictos humanos. Si puede pasar, pasará; nuestra misión es proteger a las personas y los bienes mediante sistemas de resiliencia y protocolos de mando.</p>
-    </header>
-    <section class="services">
-        <div class="card">
-            <div>
-                <h3>DIAGNÓSTICO TÁCTICO</h3>
-                <p style="color: var(--muted);">Evaluación de vulnerabilidades y riesgos operativos. Identificamos brechas críticas antes de que se conviertan en incidentes reales.</p>
-                <div class="price"><span>DESDE</span> 300€ <span>/ EVALUACIÓN</span></div>
-            </div>
-            <a href="#contacto" class="btn" onclick="setSubject('Interés en Diagnóstico Táctico')">SOLICITAR EVALUACIÓN TÉCNICA</a>
-        </div>
-        <div class="card">
-            <div>
-                <h3>ARQUITECTURA DE MANDO</h3>
-                <p style="color: var(--muted);">Diseño de protocolos de toma de decisiones bajo presión extrema. Estructuramos su organización para una respuesta inmediata.</p>
-                <div class="price"><span>DESDE</span> 600€ <span>/ PROTOCOLO</span></div>
-            </div>
-            <a href="#contacto" class="btn" onclick="setSubject('Interés en Arquitectura de Mando')">DISEÑAR PLAN TÁCTICO</a>
-        </div>
-        <div class="card">
-            <div>
-                <h3>SIMULACIÓN TÉCNICA</h3>
-                <p style="color: var(--muted);">Entrenamiento de equipos directivos mediante ingeniería de escenarios reales. Validamos su capacidad de respuesta operativa.</p>
-                <div class="price"><span>DESDE</span> 300€ <span>/ SESIÓN</span></div>
-            </div>
-            <a href="#contacto" class="btn" onclick="setSubject('Interés en Simulación Técnica')">SOLICITAR ESCENARIO DE CRISIS</a>
-        </div>
-    </section>
-    <section class="trust-bar">
-        <div class="accreditation-grid">
-            <div class="acc-item">TÉCNICO ACREDITADO OFICIAL<br><span style="color: var(--muted); font-size: 12px;">Ref: GT-00333 (Gobierno Vasco)</span></div>
-            <div class="acc-item">GESTIÓN DE PAGOS MECANIZADA<br><span style="color: var(--muted); font-size: 12px;">Facturación y Cobro Inmediato</span></div>
-            <div class="acc-item">MARCO INTERNACIONAL<br><span style="color: var(--muted); font-size: 12px;">Estándares de Seguridad Global</span></div>
-        </div>
-    </section>
-    <div class="legal-note">
-        <strong>RIGOR PROFESIONAL:</strong> Vantex Proyect opera bajo estándares técnicos de ingeniería operativa. Como Técnico Acreditado por el Gobierno Vasco, todos los servicios se ajustan a la excelencia técnica requerida en entornos de alta complejidad para la protección de personas y bienes.
+
+<header>
+    <div style="font-size: 24px; font-weight: bold; letter-spacing: 2px;">VANTEX <span style="color:#ff8c00">PROYECT</span></div>
+</header>
+
+<section class="hero">
+    <h1>Validación de Activos Críticos</h1>
+    <p style="font-size: 1.2em;">Control Centralizado para Redes Globales de Alta Complejidad</p>
+    <p class="acreditacion">Firma Acreditada Gobierno Vasco GT-00333</p>
+    <a href="https://www.linkedin.com/in/iñigo-mendoza-82245b12a/" class="btn">SOLICITAR CONSULTORÍA TÉCNICA</a>
+</section>
+
+<div class="container">
+    <div class="card">
+        <h2>Certeza Operativa e Internacional</h2>
+        <p>En Vantex Proyect no hacemos "papeles". Validamos la resiliencia real de sus activos multi-sede bajo estándares internacionales <strong>ISO 31000 e ISO 22301</strong>. Unificamos criterios para que la seguridad de su empresa en Madrid, París o Dubái sea la misma.</p>
     </div>
-    <section class="contact" id="contacto">
-        <div class="contact-box">
-            <h2 style="font-family: 'Bebas Neue';">CONSULTORÍA PRIVADA</h2>
-            <p style="color: var(--muted); margin-bottom: 40px;">Inicie el proceso de blindaje de su organización.</p>
-            <form action="https://formspree.io/f/mlgpwdkk" method="POST">
-                <input type="text" name="name" placeholder="Nombre completo / Organización" required>
-                <input type="email" name="email" placeholder="Email corporativo de contacto" required>
-                <textarea id="message-box" name="message" placeholder="Describa el área que requiere intervención o auditoría técnica..." rows="5" required></textarea>
-                <button type="submit" class="btn">ENVIAR SOLICITUD DE EVALUACIÓN</button>
-            </form>
-        </div>
-    </section>
-    <footer>
-        © 2026 VANTEX PROYECT · GESTIÓN GLOBAL DE EMERGENCIAS Y CRISIS
-    </footer>
-    <script>
-        function setSubject(subject) {
-            const messageBox = document.getElementById('message-box');
-            messageBox.value = "Estimado Iñigo,\n\nMe pongo en contacto con usted porque tengo " + subject + ".\n\n[Por favor, detalle su consulta aquí...]";
-            messageBox.focus();
-        }
-    </script>
+
+    <div class="card">
+        <h2>Servicios de Alta Dirección</h2>
+        <ul>
+            <li><strong>Auditoría Resiliencia 360:</strong> Validación técnica integral y certificación.</li>
+            <li><strong>Continuidad de Negocio:</strong> Protocolos ejecutables para activos críticos.</li>
+            <li><strong>Vigilancia Normativa:</strong> Control permanente de su responsabilidad civil.</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p><strong>VANTEX PROYECT</strong></p>
+    <p>Euskadi • Madrid • Internacional</p>
+    <p>Director Técnico: Íñigo Mendoza (GT-00333)</p>
+    <br>
+    <a href="https://www.linkedin.com/in/iñigo-mendoza-82245b12a/" style="color:#ff8c00; text-decoration: none;">Contactar vía LinkedIn</a>
+    <p style="font-size: 0.8em; margin-top: 20px; opacity: 0.5;">&copy; 2026 VANTEX. Todos los derechos reservados.</p>
+</footer>
+
 </body>
 </html>
