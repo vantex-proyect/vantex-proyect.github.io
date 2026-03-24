@@ -38,33 +38,59 @@ function handleFormSubmit(event) {
         timestamp: new Date().toISOString()
     };
     
-    // Enviar datos a un servicio (ejemplo: Formspree, Netlify Forms, etc.)
-    // Por ahora, mostrar mensaje de éxito
-    
-    // Opción 1: Usar Formspree (requiere configuración)
-    // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //     method: 'POST',
-    //     body: JSON.stringify(data),
-    //     headers: { 'Content-Type': 'application/json' }
-    // })
-    
-    // Opción 2: Guardar en localStorage (para pruebas)
-    const leads = JSON.parse(localStorage.getItem('vantex_leads') || '[]');
-    leads.push(data);
-    localStorage.setItem('vantex_leads', JSON.stringify(leads));
-    
-    // Mostrar mensaje de éxito
+    // Mostrar mensaje de envío
     formMessage.style.display = 'block';
     formMessage.style.color = '#ff8c00';
-    formMessage.innerHTML = '✓ Solicitud recibida. Nos pondremos en contacto en 24 horas.';
+    formMessage.innerHTML = '⏳ Enviando solicitud...';
     
-    // Limpiar formulario
-    form.reset();
-    
-    // Ocultar mensaje después de 5 segundos
-    setTimeout(() => {
-        formMessage.style.display = 'none';
-    }, 5000);
+    // Enviar a Formspree (servicio gratuito para formularios)
+    fetch('https://formspree.io/f/mlgpwdkk', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: data.name,
+            email: data.email,
+            company: data.company,
+            phone: data.phone,
+            sector: data.sector,
+            message: data.message,
+            _subject: `Nueva solicitud de validación de ${data.company}`,
+            _replyto: data.email
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            // Guardar también en localStorage como backup
+            const leads = JSON.parse(localStorage.getItem('vantex_leads') || '[]');
+            leads.push(data);
+            localStorage.setItem('vantex_leads', JSON.stringify(leads));
+            
+            // Mostrar mensaje de éxito
+            formMessage.style.color = '#4CAF50';
+            formMessage.innerHTML = '✓ Solicitud enviada exitosamente. Nos pondremos en contacto en 24 horas.';
+            
+            // Limpiar formulario
+            form.reset();
+            
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        } else {
+            throw new Error('Error en la respuesta del servidor');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        formMessage.style.color = '#f44336';
+        formMessage.innerHTML = '✗ Error al enviar. Por favor, intenta de nuevo.';
+        
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 5000);
+    });
 }
 
 // Analytics básico (Google Analytics, Mixpanel, etc.)
