@@ -1,17 +1,38 @@
-/* 1. Fondo del Hero (Cabecera) con el nuevo azul intenso */
+/* 1. Reset de Seguridad: Fondo de Cabecera y CTA en Negro Puro para contraste máximo */
+header, .cta-section {
+    background: #000000 !important; /* Negro total: la máxima autoridad */
+}
+
 header {
-    background: linear-gradient(rgba(0, 43, 91, 0.85), rgba(0, 43, 91, 0.85)), 
-                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat !important;
 }
 
-/* 2. Sección de Cierre (CTA) con azul sólido saturado */
-.cta-section {
-    background: #002B5B !important; /* Forza el nuevo contraste profundo */
-    color: #ffffff;
+/* 2. Mejora de Contraste en las Tarjetas (Cuadros) */
+.card, .service-card {
+    background: #ffffff !important; /* Blanco puro */
+    border-top: 4px solid #c5a059 !important; /* Tu dorado corporativo */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important; /* Sombra sutil para "flotar" sobre el fondo */
 }
 
-/* 3. Ajuste opcional para las tarjetas si quieres que el blanco sea puro */
-.card {
-    background: #ffffff !important;
-    border: 1px solid rgba(0, 43, 91, 0.1); /* Sutil borde del mismo azul para armonía */
+/* 3. Formulario de Contacto: Legibilidad Total */
+input, textarea {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(197, 160, 89, 0.3) !important; /* Borde dorado tenue */
+    color: #ffffff !important;
+    padding: 15px !important;
+}
+
+input:focus, textarea:focus {
+    border-color: #c5a059 !important; /* Brillo dorado al escribir */
+    outline: none;
+}
+
+/* 4. El Botón Dorado (Contraste Crítico) */
+.btn, button[type="submit"] {
+    background: #c5a059 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    border: none !important;
 }
