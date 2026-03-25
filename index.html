@@ -13,11 +13,6 @@
     nav { padding: 40px 20px 10px; text-align: center; }
     .brand-name { font-family: 'Playfair Display', serif; font-size: 38px; letter-spacing: 10px; text-transform: uppercase; font-weight: 700; margin: 0; }
     
-    /* Selector de idioma sutil */
-    .lang-switch { font-size: 12px; letter-spacing: 2px; margin-top: 10px; color: #999; }
-    .lang-switch span { cursor: pointer; padding: 0 5px; }
-    .lang-switch .active { color: var(--dark); font-weight: 600; }
-
     header {
       padding: 100px 20px 140px;
       text-align: center;
@@ -26,7 +21,6 @@
       color: #fff;
     }
 
-    /* El marco de acreditación ahora es más potente */
     .gt-badge {
       display: inline-block;
       border: 1px solid var(--gold);
@@ -37,64 +31,80 @@
       margin-bottom: 35px;
       text-transform: uppercase;
       font-weight: 600;
-      background: rgba(197, 160, 89, 0.05);
     }
 
     header h1 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 5vw, 54px); margin-bottom: 25px; }
-    section { padding: 100px 20px; max-width: 900px; margin: auto; }
+    section { padding: 80px 20px; max-width: 1000px; margin: auto; }
     h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 40px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
     
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-    .service-card { padding: 40px; background: var(--grey); border-left: 5px solid var(--dark); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .service-card { padding: 40px; background: var(--grey); border-top: 4px solid var(--gold); transition: 0.3s; }
+    .service-card:hover { background: #eee; }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-top: 0; color: var(--dark); }
+    .price-tag { display: block; margin-top: 15px; font-size: 13px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* Formulario de contacto elegante */
     .contact-form { background: var(--dark); color: #fff; padding: 100px 20px; text-align: center; }
     .contact-form input, .contact-form textarea {
       width: 100%; max-width: 500px; padding: 15px; margin-bottom: 20px;
       background: #222; border: 1px solid #444; color: #fff; font-family: 'Inter', sans-serif;
     }
-    .submit-btn {
-      background: var(--gold); color: #fff; padding: 20px 50px; border: none;
-      font-weight: 600; font-size: 16px; cursor: pointer; letter-spacing: 1px;
-    }
+    .submit-btn { background: var(--gold); color: #fff; padding: 20px 50px; border: none; font-weight: 600; font-size: 16px; cursor: pointer; }
 
-    footer { padding: 60px; text-align: center; font-size: 12px; color: #999; letter-spacing: 1px; }
+    footer { padding: 60px; text-align: center; font-size: 12px; color: #999; }
   </style>
 </head>
 <body>
 
 <nav>
   <div class="brand-name">VANTEX</div>
-  <div class="lang-switch">
-    <span class="active">ES</span> | <span>EN</span>
-  </div>
 </nav>
 
 <header>
   <div class="gt-badge">Técnico Acreditado</div>
-  <h1>Resiliencia Operativa en <br> Infraestructuras Críticas</h1>
+  <h1>Ingeniería de Crisis para <br> Activos Críticos</h1>
   <p style="font-size: 20px; opacity: 0.9; max-width: 750px; margin: 0 auto; font-weight: 300;">
-    Blindamos la continuidad operativa basándonos en 27 años de gestión de emergencias reales.
+    Garantizamos la supervivencia operativa de su infraestructura ante incidentes de alto impacto.
   </p>
 </header>
 
 <section>
-  <h2>Estrategia de Blindaje</h2>
+  <h2>Soluciones de Alto Valor</h2>
   <div class="grid">
-    <p style="font-size: 20px;"><strong>La digitalización no garantiza la supervivencia.</strong> Un incidente crítico puede desmantelar su operativa en horas. La mayoría de planes fallan bajo presión real.</p>
-    <p>Analizamos los puntos ciegos de su arquitectura de mando para asegurar la operatividad cuando el sistema colapse. Criterio experto, no burocracia.</p>
+    <div class="service-card">
+      <h3>Auditoría de Resiliencia 360°</h3>
+      <p>Diagnóstico técnico profundo y validación normativa (Decreto 277/2010). Identificamos los puntos de fallo antes de que ocurran.</p>
+      <span class="price-tag">Servicio High-Ticket</span>
+    </div>
+    
+    <div class="service-card">
+      <h3>Protocolos para Altos Directivos</h3>
+      <p>Diseño de arquitectura de mando y toma de decisiones bajo presión para comités de crisis y gerencia.</p>
+      <span class="price-tag">Estrategia Directiva</span>
+    </div>
+
+    <div class="service-card">
+      <h3>Simulación de Situaciones Críticas</h3>
+      <p>Simulacros de estrés real para validar la capacidad de respuesta de sus equipos. Ejecución, no teoría.</p>
+      <span class="price-tag">Validación Operativa</span>
+    </div>
+
+    <div class="service-card">
+      <h3>Continuidad de Negocio</h3>
+      <p>Planes de recuperación y blindaje de procesos críticos para asegurar que la actividad no se detenga.</p>
+      <span class="price-tag">Mantenimiento Estratégico</span>
+    </div>
   </div>
 </section>
 
 <section class="contact-form">
-  <h2>Solicitar Conversación Estratégica</h2>
-  <p style="margin-bottom: 40px; opacity: 0.8;">Inicie el protocolo de auditoría de resiliencia para su organización.</p>
+  <h2>Solicitar Diagnóstico Técnico</h2>
+  <p style="margin-bottom: 40px; opacity: 0.8;">Inicie el protocolo de auditoría para su organización.</p>
   
   <form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
     <input type="text" name="name" placeholder="Nombre y Cargo" required><br>
     <input type="email" name="_replyto" placeholder="Email Corporativo" required><br>
-    <textarea name="message" rows="4" placeholder="Breve descripción del activo crítico"></textarea><br>
-    <button type="submit" class="submit-btn">AGENDAR DIAGNÓSTICO</button>
+    <textarea name="message" rows="4" placeholder="¿Qué activo crítico desea blindar?"></textarea><br>
+    <button type="submit" class="submit-btn">AGENDAR CONVERSACIÓN</button>
   </form>
 </section>
 
