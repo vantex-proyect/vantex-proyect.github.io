@@ -7,99 +7,98 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
   <style>
-    :root { --gold: #c5a059; --dark: #1a1a1a; --light-grey: #f4f4f4; }
-    body { margin: 0; font-family: 'Inter', sans-serif; color: var(--dark); background: #ffffff; line-height: 1.8; }
+    :root { --gold: #c5a059; --dark: #111; --grey: #f4f4f4; }
+    body { margin: 0; font-family: 'Inter', sans-serif; color: var(--dark); background: #fff; line-height: 1.8; }
 
-    /* Navegación Centrada */
-    nav {
-      padding: 40px 0;
-      text-align: center;
-      background: #fff;
-    }
-
-    .logo-container img {
-      height: 120px; /* Tamaño con autoridad */
-      width: auto;
-      display: block;
-      margin: 0 auto;
-    }
+    nav { padding: 40px 20px 10px; text-align: center; }
+    .brand-name { font-family: 'Playfair Display', serif; font-size: 38px; letter-spacing: 10px; text-transform: uppercase; font-weight: 700; margin: 0; }
+    
+    /* Selector de idioma sutil */
+    .lang-switch { font-size: 12px; letter-spacing: 2px; margin-top: 10px; color: #999; }
+    .lang-switch span { cursor: pointer; padding: 0 5px; }
+    .lang-switch .active { color: var(--dark); font-weight: 600; }
 
     header {
-      padding: 100px 20px;
+      padding: 100px 20px 140px;
       text-align: center;
       background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
                   url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
       color: #fff;
     }
 
+    /* El marco de acreditación ahora es más potente */
     .gt-badge {
       display: inline-block;
       border: 1px solid var(--gold);
       color: var(--gold);
-      padding: 6px 18px;
-      font-size: 13px;
-      letter-spacing: 3px;
-      margin-bottom: 25px;
+      padding: 10px 25px;
+      font-size: 14px;
+      letter-spacing: 4px;
+      margin-bottom: 35px;
       text-transform: uppercase;
       font-weight: 600;
+      background: rgba(197, 160, 89, 0.05);
     }
 
-    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 52px); margin-bottom: 20px; }
-    section { padding: 80px 20px; max-width: 900px; margin: auto; }
-    h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 30px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .service-card { padding: 35px; background: var(--light-grey); border-left: 5px solid var(--dark); }
-    .cta-section { background: var(--dark); color: #fff; text-align: center; padding: 100px 20px; }
-    .cta-button { display: inline-block; text-decoration: none; background: var(--gold); color: #fff; padding: 20px 45px; font-weight: 600; font-size: 18px; margin-top: 30px; }
-    footer { padding: 40px; text-align: center; font-size: 14px; color: #999; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 5vw, 54px); margin-bottom: 25px; }
+    section { padding: 100px 20px; max-width: 900px; margin: auto; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 40px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+    .service-card { padding: 40px; background: var(--grey); border-left: 5px solid var(--dark); }
+
+    /* Formulario de contacto elegante */
+    .contact-form { background: var(--dark); color: #fff; padding: 100px 20px; text-align: center; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; max-width: 500px; padding: 15px; margin-bottom: 20px;
+      background: #222; border: 1px solid #444; color: #fff; font-family: 'Inter', sans-serif;
+    }
+    .submit-btn {
+      background: var(--gold); color: #fff; padding: 20px 50px; border: none;
+      font-weight: 600; font-size: 16px; cursor: pointer; letter-spacing: 1px;
+    }
+
+    footer { padding: 60px; text-align: center; font-size: 12px; color: #999; letter-spacing: 1px; }
   </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo-container">
-    <img src="logo.jpg" alt="Vantex Proyect" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
-    <h1 id="logo-text" style="display:none; font-family:'Playfair Display',serif; letter-spacing:5px; margin:0;">VANTEX</h1>
+  <div class="brand-name">VANTEX</div>
+  <div class="lang-switch">
+    <span class="active">ES</span> | <span>EN</span>
   </div>
 </nav>
 
 <header>
-  <div class="gt-badge">Acreditación Técnica GT-00333</div>
+  <div class="gt-badge">Técnico Acreditado</div>
   <h1>Resiliencia Operativa en <br> Infraestructuras Críticas</h1>
-  <p style="font-size: 20px; opacity: 0.9; max-width: 700px; margin: 20px auto; font-weight: 300;">
-    Blindamos su continuidad de negocio basándonos en 27 años de gestión de emergencias reales.
+  <p style="font-size: 20px; opacity: 0.9; max-width: 750px; margin: 0 auto; font-weight: 300;">
+    Blindamos la continuidad operativa basándonos en 27 años de gestión de emergencias reales.
   </p>
 </header>
 
 <section>
-  <h2>Ingeniería de Crisis</h2>
+  <h2>Estrategia de Blindaje</h2>
   <div class="grid">
-    <p style="font-size: 19px;"><strong>La digitalización no es resiliencia.</strong> Un parón operativo de 72 horas puede desmantelar una corporación. La mayoría de los planes fallan porque son teóricos.</p>
-    <p>Analizamos los puntos ciegos de su arquitectura de mando para garantizar la operatividad cuando el sistema colapse. No entregamos documentos; entregamos seguridad real.</p>
+    <p style="font-size: 20px;"><strong>La digitalización no garantiza la supervivencia.</strong> Un incidente crítico puede desmantelar su operativa en horas. La mayoría de planes fallan bajo presión real.</p>
+    <p>Analizamos los puntos ciegos de su arquitectura de mando para asegurar la operatividad cuando el sistema colapse. Criterio experto, no burocracia.</p>
   </div>
 </section>
 
-<section style="background: var(--light-grey);">
-  <h2>Servicios Élite</h2>
-  <div class="grid">
-    <div class="service-card">
-      <h3>Consulta 360°</h3>
-      <p>Auditoría integral y diagnóstico de vulnerabilidades bajo normativa vasca (Decreto 277/2010).</p>
-    </div>
-    <div class="service-card">
-      <h3>Simulacros Stress</h3>
-      <p>Validación real de protocolos en escenarios extremos. Sin guiones, solo ejecución operativa.</p>
-    </div>
-  </div>
+<section class="contact-form">
+  <h2>Solicitar Conversación Estratégica</h2>
+  <p style="margin-bottom: 40px; opacity: 0.8;">Inicie el protocolo de auditoría de resiliencia para su organización.</p>
+  
+  <form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+    <input type="text" name="name" placeholder="Nombre y Cargo" required><br>
+    <input type="email" name="_replyto" placeholder="Email Corporativo" required><br>
+    <textarea name="message" rows="4" placeholder="Breve descripción del activo crítico"></textarea><br>
+    <button type="submit" class="submit-btn">AGENDAR DIAGNÓSTICO</button>
+  </form>
 </section>
 
-<section class="cta-section">
-  <h2 style="border-color: #fff; color: #fff;">Protocolo de Inicio</h2>
-  <p style="font-size: 20px;">Acceda a una Auditoría de Puntos Ciegos con un Técnico Acreditado.</p>
-  <a href="mailto:tu-email@vantex.es" class="cta-button">Solicitar Diagnóstico</a>
-</section>
-
-<footer>Vantex Proyect &copy; 2026 | Euskadi | Premium Emergency Management</footer>
+<footer>VANTEX PROYECT &copy; 2026 | EUSKADI · INTERNACIONAL</footer>
 
 </body>
 </html>
