@@ -9,7 +9,7 @@
 
   <style>
     :root {
-      --gold: #c5a059; /* Un dorado sutil para detalles de lujo técnico */
+      --gold: #c5a059;
       --dark: #1a1a1a;
       --light-grey: #f9f9f9;
     }
@@ -22,11 +22,29 @@
       line-height: 1.8;
     }
 
-    /* Hero Estilo Freshfields: Imagen oscura, texto blanco y elegante */
+    /* Navegación para el Logo */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo-container img {
+      height: 50px; /* Ajusta según el tamaño de tu archivo de logo */
+      width: auto;
+    }
+
     header {
-      padding: 180px 20px 140px;
+      padding: 220px 20px 140px; /* Más espacio arriba para el nav */
       text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
                   url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
       color: #fff;
     }
@@ -35,7 +53,6 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(32px, 5vw, 56px);
       margin-bottom: 20px;
-      letter-spacing: -0.5px;
     }
 
     .gt-badge {
@@ -43,10 +60,11 @@
       border: 1px solid var(--gold);
       color: var(--gold);
       padding: 5px 15px;
-      font-size: 14px;
-      letter-spacing: 2px;
+      font-size: 13px;
+      letter-spacing: 3px;
       margin-bottom: 30px;
       text-transform: uppercase;
+      font-weight: 600;
     }
 
     section {
@@ -67,19 +85,23 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-top: 40px;
+      gap: 50px;
     }
 
     .service-card {
-      padding: 30px;
+      padding: 40px;
       background: var(--light-grey);
-      border-left: 3px solid var(--dark);
+      border-left: 4px solid var(--dark);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
     }
 
     .service-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 24px;
+      font-size: 26px;
       margin-top: 0;
     }
 
@@ -87,7 +109,7 @@
       background: var(--dark);
       color: #fff;
       text-align: center;
-      padding: 100px 20px;
+      padding: 120px 20px;
     }
 
     .cta-button {
@@ -95,33 +117,36 @@
       text-decoration: none;
       background: var(--gold);
       color: #fff;
-      padding: 20px 45px;
+      padding: 22px 50px;
       font-weight: 600;
       font-size: 18px;
-      transition: 0.3s;
-      margin-top: 30px;
-    }
-
-    .cta-button:hover {
-      background: #b08d4a;
+      margin-top: 40px;
+      letter-spacing: 1px;
     }
 
     footer {
-      padding: 40px;
+      padding: 60px;
       text-align: center;
       font-size: 14px;
       color: #777;
+      background: #fff;
     }
   </style>
 </head>
 
 <body>
 
+<nav>
+  <div class="logo-container">
+    <img src="Logo vantex proyect.jpg" alt="Vantex Proyect Logo">
+  </div>
+</nav>
+
 <header>
   <div class="gt-badge">Acreditación Técnica GT-00333</div>
   <h1>Resiliencia Operativa en <br> Infraestructuras Críticas</h1>
-  <p style="font-size: 22px; opacity: 0.9; max-width: 800px; margin: 20px auto;">
-    Diseñamos el blindaje de su continuidad de negocio basándonos en 27 años de gestión de emergencias reales.
+  <p style="font-size: 22px; opacity: 0.9; max-width: 800px; margin: 25px auto; font-weight: 300;">
+    Blindamos su continuidad de negocio basándonos en 27 años de gestión de emergencias reales.
   </p>
 </header>
 
@@ -129,10 +154,10 @@
   <h2>El Valor de la Anticipación</h2>
   <div class="grid">
     <div>
-      <p><strong>Un parón operativo de 72 horas puede costar millones.</strong> La mayoría de los planes de autoprotección son documentos estáticos que fallan en los primeros 5 minutos de una crisis real.</p>
+      <p style="font-size: 20px;"><strong>Un parón operativo de 72 horas puede costar millones.</strong> [cite: 228] La mayoría de los planes de autoprotección son documentos estáticos que fallan bajo presión real. [cite: 250]</p>
     </div>
     <div>
-      <p>En Vantex, no vendemos "papeles". Vendemos ingeniería de crisis. Analizamos los puntos ciegos de su arquitectura de mando para garantizar que, cuando el sistema falle, su organización siga operativa.</p>
+      <p>En Vantex, no vendemos "papeles". Vendemos ingeniería de crisis. Analizamos los puntos ciegos de su arquitectura de mando para garantizar que su organización siga operativa cuando el sistema falle. [cite: 265, 315]</p>
     </div>
   </div>
 </section>
@@ -143,15 +168,15 @@
     <div class="grid">
       <div class="service-card">
         <h3>Consulta 360°</h3>
-        <p>Auditoría integral de resiliencia y diagnóstico de vulnerabilidades operativas bajo normativa vasca.</p>
+        <p>Auditoría integral de resiliencia y diagnóstico de vulnerabilidades operativas bajo normativa vasca. [cite: 224, 278]</p>
       </div>
       <div class="service-card">
         <h3>Simulacros de Stress</h3>
-        <p>Validación real de protocolos en escenarios extremos. Sin guiones teóricos, solo ejecución bajo presión.</p>
+        <p>Validación real de protocolos en escenarios extremos. Sin guiones teóricos, solo ejecución operativa. [cite: 238, 284]</p>
       </div>
       <div class="service-card">
         <h3>Mantenimiento Estratégico</h3>
-        <p>Gestión continua de la autoprotección y actualización normativa para asegurar el blindaje permanente.</p>
+        <p>Gestión continua de la autoprotección y actualización para asegurar el blindaje permanente. [cite: 283]</p>
       </div>
     </div>
   </div>
@@ -159,12 +184,12 @@
 
 <section class="cta-section">
   <h2 style="border-color: #fff; color: #fff;">Inicie la Conversación</h2>
-  <p style="font-size: 20px;">Agenda una Auditoría de Puntos Ciegos con un Técnico Acreditado.</p>
+  <p style="font-size: 22px; max-width: 700px; margin: auto;">Agenda una Auditoría de Puntos Ciegos con un Técnico Acreditado.</p>
   <a href="mailto:tu-email@vantex.es" class="cta-button">Solicitar Diagnóstico Técnico</a>
 </section>
 
 <footer>
-  Vantex &copy; 2026 | Consultoría de Élite en Gestión de Emergencias | Euskadi - Internacional
+  Vantex Proyect &copy; 2026 | Consultoría de Élite en Gestión de Emergencias | Euskadi [cite: 262, 263]
 </footer>
 
 </body>
