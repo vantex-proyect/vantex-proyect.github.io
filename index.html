@@ -12,7 +12,7 @@
             --accent: #c5a059;
             --dark: #0f0f0f;
             --text: #333333;
-            --light: #f4f4f4;
+            --light: #f4f4f4; /* El gris de contraste sugerido */
             --white: #ffffff;
             --spacing-lg: 120px;
             --spacing-md: 60px;
@@ -48,7 +48,10 @@
 
         /* Layout */
         section { padding: var(--spacing-lg) 60px; max-width: 1300px; margin: 0 auto; }
-        .bg-light { background-color: var(--light); max-width: 100%; }
+        
+        /* APLICACIÓN DEL CONTRASTE SOLICITADO */
+        .bg-light { background-color: var(--light); max-width: 100%; width: 100%; }
+        
         .accent-line { width: 50px; height: 3px; background: var(--accent); margin-bottom: 30px; }
         h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px); color: var(--dark); margin-bottom: 50px; line-height: 1.2; }
 
@@ -114,77 +117,4 @@
             <div class="problem-text">
                 <div class="accent-line"></div>
                 <h2>El riesgo no es la crisis,<br>es la falsa sensación de control.</h2>
-                <p>Las auditorías documentales y los protocolos teóricos ofrecen una seguridad ilusoria. En infraestructuras críticas, <strong>el fallo no es una opción</strong>.</p>
-                <p>Vantex interviene donde la consultoría tradicional se detiene: el momento en que el sistema se somete a estrés real y los protocolos de mando colapsan.</p>
-            </div>
-            <div class="impact-box">
-                <h3>Impacto Crítico</h3>
-                <p>Un parón operativo de 12 horas en un activo estratégico no es un problema técnico; es una crisis reputacional, económica y social de gran escala. Identificamos el punto de ruptura antes de que el mercado lo haga.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-light">
-        <div class="accent-line"></div>
-        <h2>Nuestra Propuesta de Valor</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3>Auditoría de Fallo Real</h3>
-                <p>Identificamos fallos operativos y vulnerabilidades ocultas que solo emergen bajo presión extrema. Olvide los informes de cumplimiento; entregamos resiliencia real.</p>
-            </div>
-            <div class="card">
-                <h3>Arquitectura de Mando</h3>
-                <p>Diseñamos protocolos de toma de decisiones para Comités de Dirección y Consejos, asegurando que la cadena de mando permanezca operativa en el caos.</p>
-            </div>
-            <div class="card">
-                <h3>Simulaciones de Stress</h3>
-                <p>Validamos su capacidad de respuesta mediante simulacros de alta fidelidad. Estresamos sus sistemas y personas para garantizar que la ejecución sea impecable.</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div style="text-align: center; max-width: 900px; margin: 0 auto;">
-            <div class="accent-line" style="margin: 0 auto 30px;"></div>
-            <h2>El Diferencial Vantex</h2>
-            <p style="font-size: 22px; line-height: 1.8; color: var(--dark);">A diferencia de las grandes consultoras globales que entregan manuales estáticos, nosotros entregamos <strong>capacidad de supervivencia operativa</strong>. Nuestra metodología se basa en décadas de experiencia táctica donde la teoría no existía, solo la resolución de incidentes críticos en tiempo real.</p>
-        </div>
-    </section>
-
-    <div class="sectors">
-        <p style="margin-bottom: 30px; font-weight: 600; font-size: 12px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase;">Sectores de Intervención</p>
-        <div class="sectors-list">
-            <span>ENERGÍA & UTILITIES</span>
-            <span>INDUSTRIA PESADA</span>
-            <span>INFRAESTRUCTURA PORTUARIA</span>
-            <span>SECTOR PÚBLICO CRÍTICO</span>
-            <span>LOGÍSTICA ESTRATÉGICA</span>
-        </div>
-    </div>
-
-    <section class="bg-light">
-        <div class="direction-section">
-            <div class="dir-image"></div>
-            <div class="dir-text">
-                <div class="accent-line"></div>
-                <h2>Dirección Estratégica</h2>
-                <span class="dir-title">Iñigo Mendoza | Especialista en Gestión de Crisis</span>
-                <p style="font-size: 18px; margin-bottom: 20px;">Técnico acreditado por el Gobierno Vasco (GT-00333) con más de 27 años de experiencia en la gestión de emergencias y protección de activos críticos.</p>
-                <p>Vantex nace para aportar el criterio técnico y la frialdad operativa necesaria para blindar organizaciones ante lo imprevisible. No somos asesores; somos ingenieros de resiliencia.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="cta-section">
-        <div class="accent-line" style="margin: 0 auto 30px; background: var(--white);"></div>
-        <h2>Blinde su infraestructura hoy.</h2>
-        <p>Solicite una evaluación inicial estratégica de 10 minutos para identificar sus vulnerabilidades críticas.</p>
-        <a href="mailto:tu-email@vantex.es" class="btn">Solicitar Evaluación Inicial</a>
-    </div>
-
-    <footer>
-        VANTEX PROYECT &copy; 2026 | EUSKADI · INTERNACIONAL | RESILIENCIA OPERATIVA DE ÉLITE
-    </footer>
-
-</body>
-</html>
+                <p>Las auditorías document
