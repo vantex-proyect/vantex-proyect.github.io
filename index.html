@@ -8,14 +8,17 @@
 
   <style>
     :root { --gold: #c5a059; --dark: #111; --grey: #f4f4f4; }
-    body { margin: 0; font-family: 'Inter', sans-serif; color: var(--dark); background: #fff; line-height: 1.8; }
+    body { margin: 0; font-family: 'Inter', sans-serif; color: var(--dark); background: #fff; line-height: 1.8; text-align: center; }
 
-    nav { padding: 40px 20px 10px; text-align: center; }
+    /* Navegación y Selector de Idioma */
+    nav { padding: 40px 20px 10px; }
     .brand-name { font-family: 'Playfair Display', serif; font-size: 38px; letter-spacing: 10px; text-transform: uppercase; font-weight: 700; margin: 0; }
-    
+    .lang-switch { font-size: 12px; letter-spacing: 2px; margin-top: 15px; color: #999; }
+    .lang-switch a { text-decoration: none; color: inherit; transition: 0.3s; }
+    .lang-switch a:hover { color: var(--gold); }
+
     header {
       padding: 120px 20px 160px;
-      text-align: center;
       background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
                   url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
       color: #fff;
@@ -33,63 +36,61 @@
       font-weight: 600;
     }
 
-    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 6vw, 60px); margin-bottom: 25px; }
-    
-    /* Sección de Soluciones Centrada y Grande */
-    .solutions-section { padding: 100px 20px; text-align: center; max-width: 1100px; margin: auto; }
-    
+    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 6vw, 60px); margin-bottom: 25px; max-width: 1000px; margin: 0 auto; }
+    header p { font-size: 22px; opacity: 0.9; max-width: 800px; margin: 0 auto; font-weight: 300; }
+
+    /* Sección de Soluciones Centrada */
+    .solutions-section { padding: 100px 20px; max-width: 1100px; margin: auto; }
     .solutions-section h2 { 
       font-family: 'Playfair Display', serif; 
-      font-size: 42px; /* Más grande */
+      font-size: 42px; 
       margin-bottom: 50px; 
       border-bottom: 2px solid var(--gold); 
       display: inline-block; 
       padding-bottom: 15px;
     }
     
-    .grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 30px; 
-      text-align: left; /* El contenido de las cajas se mantiene legible a la izquierda */
-    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
     .service-card { 
-      padding: 40px; 
+      padding: 45px; 
       background: var(--grey); 
       border-top: 4px solid var(--gold); 
       transition: 0.3s; 
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
     }
     
     .service-card:hover { background: #eee; transform: translateY(-5px); }
     .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-top: 0; color: var(--dark); }
-    .price-tag { display: block; margin-top: 20px; font-size: 13px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+    .service-card p { color: #555; margin-bottom: 20px; }
+    .price-tag { font-size: 13px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
 
-    .contact-form { background: var(--dark); color: #fff; padding: 120px 20px; text-align: center; }
+    /* Formulario */
+    .contact-form { background: var(--dark); color: #fff; padding: 120px 20px; }
     .contact-form input, .contact-form textarea {
       width: 100%; max-width: 500px; padding: 15px; margin-bottom: 20px;
       background: #222; border: 1px solid #444; color: #fff; font-family: 'Inter', sans-serif;
     }
     .submit-btn { background: var(--gold); color: #fff; padding: 22px 60px; border: none; font-weight: 600; font-size: 16px; cursor: pointer; letter-spacing: 1px; }
 
-    footer { padding: 60px; text-align: center; font-size: 12px; color: #999; letter-spacing: 2px; }
+    footer { padding: 60px; text-align: center; font-size: 12px; color: #999; letter-spacing: 2px; text-transform: uppercase; }
   </style>
 </head>
 <body>
 
 <nav>
   <div class="brand-name">VANTEX</div>
+  <div class="lang-switch">
+    <span style="font-weight:600; color:var(--dark);">ES</span> | <a href="en.html">EN</a>
+  </div>
 </nav>
 
 <header>
   <div class="gt-badge">Técnico Acreditado</div>
   <h1>Ingeniería de Crisis para <br> Activos Críticos</h1>
-  <p style="font-size: 22px; opacity: 0.9; max-width: 800px; margin: 0 auto; font-weight: 300;">
-    Garantizamos la supervivencia operativa de su infraestructura ante incidentes de alto impacto.
-  </p>
+  <p>Garantizamos la supervivencia operativa de su infraestructura ante incidentes de alto impacto.</p>
 </header>
 
 <section class="solutions-section">
@@ -109,7 +110,7 @@
 
     <div class="service-card">
       <h3>Simulación de Situaciones Críticas</h3>
-      <p>Simulacros de estrés real para validar la capacidad de respuesta táctica de sus equipos. Validación de campo, no documental.</p>
+      <p>Simulacros de estrés real para validar la capacidad de respuesta táctica de sus equipos. Validación de campo profesional.</p>
       <span class="price-tag">Validación Operativa</span>
     </div>
 
