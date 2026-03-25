@@ -14,7 +14,7 @@
     .brand-name { font-family: 'Playfair Display', serif; font-size: 38px; letter-spacing: 10px; text-transform: uppercase; font-weight: 700; margin: 0; }
     
     header {
-      padding: 100px 20px 140px;
+      padding: 120px 20px 160px;
       text-align: center;
       background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
                   url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
@@ -33,24 +33,49 @@
       font-weight: 600;
     }
 
-    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 5vw, 54px); margin-bottom: 25px; }
-    section { padding: 80px 20px; max-width: 1000px; margin: auto; }
-    h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 40px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 6vw, 60px); margin-bottom: 25px; }
     
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .service-card { padding: 40px; background: var(--grey); border-top: 4px solid var(--gold); transition: 0.3s; }
-    .service-card:hover { background: #eee; }
-    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-top: 0; color: var(--dark); }
-    .price-tag { display: block; margin-top: 15px; font-size: 13px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    /* Sección de Soluciones Centrada y Grande */
+    .solutions-section { padding: 100px 20px; text-align: center; max-width: 1100px; margin: auto; }
+    
+    .solutions-section h2 { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 42px; /* Más grande */
+      margin-bottom: 50px; 
+      border-bottom: 2px solid var(--gold); 
+      display: inline-block; 
+      padding-bottom: 15px;
+    }
+    
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 30px; 
+      text-align: left; /* El contenido de las cajas se mantiene legible a la izquierda */
+    }
 
-    .contact-form { background: var(--dark); color: #fff; padding: 100px 20px; text-align: center; }
+    .service-card { 
+      padding: 40px; 
+      background: var(--grey); 
+      border-top: 4px solid var(--gold); 
+      transition: 0.3s; 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .service-card:hover { background: #eee; transform: translateY(-5px); }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-top: 0; color: var(--dark); }
+    .price-tag { display: block; margin-top: 20px; font-size: 13px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+
+    .contact-form { background: var(--dark); color: #fff; padding: 120px 20px; text-align: center; }
     .contact-form input, .contact-form textarea {
       width: 100%; max-width: 500px; padding: 15px; margin-bottom: 20px;
       background: #222; border: 1px solid #444; color: #fff; font-family: 'Inter', sans-serif;
     }
-    .submit-btn { background: var(--gold); color: #fff; padding: 20px 50px; border: none; font-weight: 600; font-size: 16px; cursor: pointer; }
+    .submit-btn { background: var(--gold); color: #fff; padding: 22px 60px; border: none; font-weight: 600; font-size: 16px; cursor: pointer; letter-spacing: 1px; }
 
-    footer { padding: 60px; text-align: center; font-size: 12px; color: #999; }
+    footer { padding: 60px; text-align: center; font-size: 12px; color: #999; letter-spacing: 2px; }
   </style>
 </head>
 <body>
@@ -62,48 +87,48 @@
 <header>
   <div class="gt-badge">Técnico Acreditado</div>
   <h1>Ingeniería de Crisis para <br> Activos Críticos</h1>
-  <p style="font-size: 20px; opacity: 0.9; max-width: 750px; margin: 0 auto; font-weight: 300;">
+  <p style="font-size: 22px; opacity: 0.9; max-width: 800px; margin: 0 auto; font-weight: 300;">
     Garantizamos la supervivencia operativa de su infraestructura ante incidentes de alto impacto.
   </p>
 </header>
 
-<section>
-  <h2>Soluciones de Alto Valor</h2>
+<section class="solutions-section">
+  <h2>Soluciones de Alto Nivel</h2>
   <div class="grid">
     <div class="service-card">
       <h3>Auditoría de Resiliencia 360°</h3>
-      <p>Diagnóstico técnico profundo y validación normativa (Decreto 277/2010). Identificamos los puntos de fallo antes de que ocurran.</p>
-      <span class="price-tag">Servicio High-Ticket</span>
+      <p>Diagnóstico técnico profundo y validación de protocolos operativos. Identificamos los puntos críticos de fallo antes de que la crisis ocurra.</p>
+      <span class="price-tag">Estrategia de Blindaje</span>
     </div>
     
     <div class="service-card">
       <h3>Protocolos para Altos Directivos</h3>
-      <p>Diseño de arquitectura de mando y toma de decisiones bajo presión para comités de crisis y gerencia.</p>
-      <span class="price-tag">Estrategia Directiva</span>
+      <p>Diseño de arquitectura de mando y toma de decisiones bajo presión extrema para comités de crisis, consejos y gerencia general.</p>
+      <span class="price-tag">Criterio de Autoridad</span>
     </div>
 
     <div class="service-card">
       <h3>Simulación de Situaciones Críticas</h3>
-      <p>Simulacros de estrés real para validar la capacidad de respuesta de sus equipos. Ejecución, no teoría.</p>
+      <p>Simulacros de estrés real para validar la capacidad de respuesta táctica de sus equipos. Validación de campo, no documental.</p>
       <span class="price-tag">Validación Operativa</span>
     </div>
 
     <div class="service-card">
       <h3>Continuidad de Negocio</h3>
-      <p>Planes de recuperación y blindaje de procesos críticos para asegurar que la actividad no se detenga.</p>
-      <span class="price-tag">Mantenimiento Estratégico</span>
+      <p>Ingeniería de recuperación y mantenimiento estratégico para asegurar que los activos críticos operen bajo cualquier circunstancia.</p>
+      <span class="price-tag">Resiliencia Continua</span>
     </div>
   </div>
 </section>
 
 <section class="contact-form">
   <h2>Solicitar Diagnóstico Técnico</h2>
-  <p style="margin-bottom: 40px; opacity: 0.8;">Inicie el protocolo de auditoría para su organización.</p>
+  <p style="margin-bottom: 45px; opacity: 0.8; font-size: 18px;">Inicie el protocolo de auditoría de resiliencia para su organización.</p>
   
   <form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
     <input type="text" name="name" placeholder="Nombre y Cargo" required><br>
     <input type="email" name="_replyto" placeholder="Email Corporativo" required><br>
-    <textarea name="message" rows="4" placeholder="¿Qué activo crítico desea blindar?"></textarea><br>
+    <textarea name="message" rows="4" placeholder="¿Qué activo crítico o escenario desea evaluar?"></textarea><br>
     <button type="submit" class="submit-btn">AGENDAR CONVERSACIÓN</button>
   </form>
 </section>
