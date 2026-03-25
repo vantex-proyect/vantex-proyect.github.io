@@ -4,55 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vantex | Ingeniería Operativa de Crisis</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --gold: #c5a059;
-      --dark: #1a1a1a;
-      --light-grey: #f9f9f9;
-    }
+    :root { --gold: #c5a059; --dark: #1a1a1a; --light-grey: #f9f9f9; }
+    body { margin: 0; font-family: 'Inter', sans-serif; color: var(--dark); background: #ffffff; line-height: 1.8; }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: var(--dark);
-      background: #ffffff;
-      line-height: 1.8;
-    }
-
-    /* Navegación para el Logo */
+    /* Navegación Transparente y Elegante */
     nav {
-      position: fixed;
+      position: absolute;
       top: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 20px 0;
+      padding: 30px 0;
       display: flex;
       justify-content: center;
-      align-items: center;
       z-index: 1000;
-      border-bottom: 1px solid #eee;
     }
 
     .logo-container img {
-      height: 50px; /* Ajusta según el tamaño de tu archivo de logo */
+      height: 80px; /* Tamaño optimizado para impacto visual */
       width: auto;
+      filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3)); /* Sombra suave para que resalte */
     }
 
     header {
-      padding: 220px 20px 140px; /* Más espacio arriba para el nav */
+      padding: 250px 20px 150px;
       text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                   url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
       color: #fff;
-    }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(32px, 5vw, 56px);
-      margin-bottom: 20px;
     }
 
     .gt-badge {
@@ -67,78 +47,21 @@
       font-weight: 600;
     }
 
-    section {
-      padding: 120px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      margin-bottom: 40px;
-      border-bottom: 2px solid var(--gold);
-      display: inline-block;
-      padding-bottom: 10px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 50px;
-    }
-
-    .service-card {
-      padding: 40px;
-      background: var(--light-grey);
-      border-left: 4px solid var(--dark);
-      transition: transform 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .service-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      margin-top: 0;
-    }
-
-    .cta-section {
-      background: var(--dark);
-      color: #fff;
-      text-align: center;
-      padding: 120px 20px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      text-decoration: none;
-      background: var(--gold);
-      color: #fff;
-      padding: 22px 50px;
-      font-weight: 600;
-      font-size: 18px;
-      margin-top: 40px;
-      letter-spacing: 1px;
-    }
-
-    footer {
-      padding: 60px;
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-      background: #fff;
-    }
+    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px); margin-bottom: 20px; }
+    section { padding: 100px 20px; max-width: 1000px; margin: auto; }
+    h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 30px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 10px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+    .service-card { padding: 40px; background: var(--light-grey); border-left: 4px solid var(--dark); }
+    .cta-section { background: var(--dark); color: #fff; text-align: center; padding: 100px 20px; }
+    .cta-button { display: inline-block; text-decoration: none; background: var(--gold); color: #fff; padding: 20px 45px; font-weight: 600; font-size: 18px; margin-top: 30px; }
+    footer { padding: 40px; text-align: center; font-size: 14px; color: #777; }
   </style>
 </head>
-
 <body>
 
 <nav>
   <div class="logo-container">
-    <img src="Logo vantex proyect.jpg" alt="Vantex Proyect Logo">
+    <img src="logo.jpg" alt="Vantex Proyect Logo">
   </div>
 </nav>
 
@@ -153,44 +76,36 @@
 <section>
   <h2>El Valor de la Anticipación</h2>
   <div class="grid">
-    <div>
-      <p style="font-size: 20px;"><strong>Un parón operativo de 72 horas puede costar millones.</strong> [cite: 228] La mayoría de los planes de autoprotección son documentos estáticos que fallan bajo presión real. [cite: 250]</p>
-    </div>
-    <div>
-      <p>En Vantex, no vendemos "papeles". Vendemos ingeniería de crisis. Analizamos los puntos ciegos de su arquitectura de mando para garantizar que su organización siga operativa cuando el sistema falle. [cite: 265, 315]</p>
-    </div>
+    <p style="font-size: 20px;"><strong>Un parón operativo de 72 horas puede costar millones.</strong> La mayoría de los planes de autoprotección son documentos estáticos que fallan bajo presión real.</p>
+    <p>En Vantex, no vendemos "papeles". Vendemos ingeniería de crisis. Analizamos los puntos ciegos de su arquitectura de mando para garantizar la operatividad cuando el sistema falle.</p>
   </div>
 </section>
 
 <section style="background: var(--light-grey);">
-  <div style="max-width: 1000px; margin: auto;">
-    <h2>Servicios de Alta Complejidad</h2>
-    <div class="grid">
-      <div class="service-card">
-        <h3>Consulta 360°</h3>
-        <p>Auditoría integral de resiliencia y diagnóstico de vulnerabilidades operativas bajo normativa vasca. [cite: 224, 278]</p>
-      </div>
-      <div class="service-card">
-        <h3>Simulacros de Stress</h3>
-        <p>Validación real de protocolos en escenarios extremos. Sin guiones teóricos, solo ejecución operativa. [cite: 238, 284]</p>
-      </div>
-      <div class="service-card">
-        <h3>Mantenimiento Estratégico</h3>
-        <p>Gestión continua de la autoprotección y actualización para asegurar el blindaje permanente. [cite: 283]</p>
-      </div>
+  <h2>Servicios de Alta Complejidad</h2>
+  <div class="grid">
+    <div class="service-card">
+      <h3>Consulta 360°</h3>
+      <p>Auditoría integral de resiliencia y diagnóstico de vulnerabilidades operativas bajo normativa vasca.</p>
+    </div>
+    <div class="service-card">
+      <h3>Simulacros de Stress</h3>
+      <p>Validación real de protocolos en escenarios extremos. Sin guiones teóricos, solo ejecución operativa.</p>
+    </div>
+    <div class="service-card">
+      <h3>Mantenimiento Estratégico</h3>
+      <p>Gestión continua de la autoprotección y actualización para asegurar el blindaje permanente.</p>
     </div>
   </div>
 </section>
 
 <section class="cta-section">
   <h2 style="border-color: #fff; color: #fff;">Inicie la Conversación</h2>
-  <p style="font-size: 22px; max-width: 700px; margin: auto;">Agenda una Auditoría de Puntos Ciegos con un Técnico Acreditado.</p>
+  <p style="font-size: 22px;">Agenda una Auditoría de Puntos Ciegos con un Técnico Acreditado.</p>
   <a href="mailto:tu-email@vantex.es" class="cta-button">Solicitar Diagnóstico Técnico</a>
 </section>
 
-<footer>
-  Vantex Proyect &copy; 2026 | Consultoría de Élite en Gestión de Emergencias | Euskadi [cite: 262, 263]
-</footer>
+<footer>Vantex Proyect &copy; 2026 | Consultoría de Élite | Euskadi</footer>
 
 </body>
 </html>
