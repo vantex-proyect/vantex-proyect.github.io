@@ -1,78 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vantex | Operational Crisis Engineering</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
-    :root { --gold: #c5a059; --dark: #111; --grey: #f4f4f4; }
-    body { margin: 0; font-family: 'Inter', sans-serif; color: var(--dark); background: #fff; line-height: 1.8; text-align: center; }
-    nav { padding: 40px 20px 10px; }
-    .brand-name { font-family: 'Playfair Display', serif; font-size: 38px; letter-spacing: 10px; text-transform: uppercase; font-weight: 700; margin: 0; }
-    .lang-switch { font-size: 12px; letter-spacing: 2px; margin-top: 10px; color: #999; }
-    header { padding: 120px 20px 160px; background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat; color: #fff; }
-    .gt-badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold); padding: 10px 25px; font-size: 14px; letter-spacing: 4px; margin-bottom: 35px; text-transform: uppercase; font-weight: 600; }
-    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 6vw, 60px); margin-bottom: 25px; }
-    .solutions-section { padding: 100px 20px; max-width: 1100px; margin: auto; }
-    .solutions-section h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 50px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 15px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .service-card { padding: 40px; background: var(--grey); border-top: 4px solid var(--gold); transition: 0.3s; }
-    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-top: 0; }
-    .price-tag { display: block; margin-top: 20px; font-size: 12px; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
-    .contact-form { background: var(--dark); color: #fff; padding: 120px 20px; }
-    .contact-form input, .contact-form textarea { width: 100%; max-width: 500px; padding: 15px; margin-bottom: 20px; background: #222; border: 1px solid #444; color: #fff; }
-    .submit-btn { background: var(--gold); color: #fff; padding: 22px 60px; border: none; font-weight: 600; cursor: pointer; }
-    footer { padding: 60px; font-size: 12px; color: #999; letter-spacing: 2px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vantex | Ingeniería Operativa de Crisis & Resiliencia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #c5a059;
+            --dark: #0f0f0f;
+            --text: #333333;
+            --light: #f4f4f4;
+            --white: #ffffff;
+            --spacing-lg: 120px;
+            --spacing-md: 60px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.8; background: var(--white); -webkit-font-smoothing: antialiased; }
+
+        /* Navigation */
+        nav { padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; position: absolute; width: 100%; z-index: 100; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; letter-spacing: 5px; color: var(--white); text-decoration: none; }
+        .lang { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.7); }
+        .lang a { color: var(--white); text-decoration: none; margin: 0 10px; transition: 0.3s; }
+        .lang a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
+            color: var(--white);
+            padding: 0 20px;
+        }
+        .badge { border: 1px solid var(--accent); color: var(--accent); padding: 8px 20px; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; font-weight: 600; }
+        header h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 75px); line-height: 1.1; margin-bottom: 25px; max-width: 1100px; }
+        header p { font-size: clamp(18px, 2.5vw, 24px); font-weight: 300; max-width: 800px; opacity: 0.9; margin-bottom: 40px; }
+        .hero-statement { font-style: italic; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--accent); letter-spacing: 1px; }
+
+        /* Layout */
+        section { padding: var(--spacing-lg) 60px; max-width: 1300px; margin: 0 auto; }
+        .bg-light { background-color: #cfe6f5; max-width: 100%; } /* azul cielo más intenso */
+        .accent-line { width: 50px; height: 3px; background: var(--accent); margin-bottom: 30px; }
+        h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px); color: var(--dark); margin-bottom: 50px; line-height: 1.2; }
+
+        /* Problem Section */
+        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .problem-text p { font-size: 20px; color: var(--dark); margin-bottom: 30px; }
+        .problem-text strong { color: var(--accent); }
+        .impact-box { padding: 50px; background: var(--dark); color: var(--white); border-left: 6px solid var(--accent); }
+        .impact-box h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 20px; }
+
+        /* Value Prop */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 50px; }
+        .card {
+            padding: 60px 40px;
+            background: var(--white);
+            border: 1px solid #ddd; /* borde más visible */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05); /* ligera sombra para resaltar */
+            transition: 0.4s ease;
+        }
+        .card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .card h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 20px; color: var(--dark); }
+        .card p { font-size: 16px; color: #666; }
+
+        /* Authority / Direction */
+        .direction-section { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center; }
+        .dir-image { width: 100%; height: 500px; background: #ddd url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071') center/cover; filter: grayscale(100%); }
+        .dir-text h2 { margin-bottom: 10px; }
+        .dir-title { color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 30px; display: block; }
+
+        /* Contexts / Sectors */
+        .sectors { text-align: center; padding: 80px 60px; border-top: 1px solid #eee; }
+        .sectors-list { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.5; font-weight: 600; letter-spacing: 2px; font-size: 13px; }
+
+        /* CTA */
+        .cta-section { background: var(--dark); color: var(--white); text-align: center; padding: 120px 20px; }
+        .cta-section h2 { color: var(--white); border: none; margin-bottom: 20px; }
+        .btn { display: inline-block; padding: 22px 50px; background: var(--accent); color: var(--white); text-decoration: none; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 13px; transition: 0.3s; margin-top: 30px; }
+        .btn:hover { background: #b08d4a; transform: translateY(-3px); }
+
+        /* Footer */
+        footer { padding: 60px; text-align: center; font-size: 11px; letter-spacing: 2px; color: #999; text-transform: uppercase; }
+
+        @media (max-width: 900px) {
+            nav { padding: 20px; }
+            section { padding: 80px 20px; }
+            .problem-grid, .direction-section { grid-template-columns: 1fr; gap: 40px; }
+            .dir-image { height: 400px; }
+        }
+    </style>
 </head>
 <body>
-<nav>
-  <div class="brand-name">VANTEX</div>
-  <div class="lang-switch">
-    <a href="index.html" style="text-decoration:none; color:inherit;">ES</a> | <span style="color:var(--dark); font-weight:600;">EN</span>
-  </div>
-</nav>
-<header>
-  <div class="gt-badge">Accredited Senior Technician</div>
-  <h1>Crisis Engineering for <br> Critical Assets</h1>
-  <p style="font-size: 22px; opacity: 0.9; max-width: 800px; margin: 0 auto; font-weight: 300;">Ensuring operational survival for high-impact infrastructures based on 27 years of real-world emergency management.</p>
-</header>
-<section class="solutions-section">
-  <h2>High-Level Solutions</h2>
-  <div class="grid">
-    <div class="service-card">
-      <h3>360° Resilience Audit</h3>
-      <p>In-depth technical diagnosis and validation of operational protocols. We identify critical failure points before the crisis occurs.</p>
-      <span class="price-tag">Strategic Shielding</span>
+
+    <nav>
+        <a href="#" class="logo">VANTEX</a>
+        <div class="lang">
+            <span style="color:var(--accent)">ES</span> | <a href="en.html">EN</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="badge">Estrategia en Resiliencia Operativa de Élite</div>
+        <h1>Donde la mayoría ve continuidad, nosotros detectamos el fallo operativo.</h1>
+        <p>Garantizamos la supervivencia de infraestructuras críticas identificando vulnerabilidades sistémicas bajo condiciones de presión real.</p>
+        <div class="hero-statement">"La mayoría de las organizaciones no han probado su capacidad de respuesta bajo un escenario de fallo real."</div>
+    </header>
+
+    <section>
+        <div class="problem-grid">
+            <div class="problem-text">
+                <div class="accent-line"></div>
+                <h2>El riesgo no es la crisis,<br>es la falsa sensación de control.</h2>
+                <p>Las auditorías documentales y los protocolos teóricos ofrecen una seguridad ilusoria. En infraestructuras críticas, <strong>el fallo no es una opción</strong>.</p>
+                <p>Vantex interviene donde la consultoría tradicional se detiene: el momento en que el sistema se somete a estrés real y los protocolos de mando colapsan.</p>
+            </div>
+            <div class="impact-box">
+                <h3>Impacto Crítico</h3>
+                <p>Un parón operativo de 12 horas en un activo estratégico no es un problema técnico; es una crisis reputacional, económica y social de gran escala. Identificamos el punto de ruptura antes de que el mercado lo haga.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light">
+        <div class="accent-line"></div>
+        <h2>Nuestra Propuesta de Valor</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Auditoría de Fallo Real</h3>
+                <p>Identificamos fallos operativos y vulnerabilidades ocultas que solo emergen bajo presión extrema. Olvide los informes de cumplimiento; entregamos resiliencia real.</p>
+            </div>
+            <div class="card">
+                <h3>Arquitectura de Mando</h3>
+                <p>Diseñamos protocolos de toma de decisiones para Comités de Dirección y Consejos, asegurando que la cadena de mando permanezca operativa en el caos.</p>
+            </div>
+            <div class="card">
+                <h3>Simulaciones de Stress</h3>
+                <p>Validamos su capacidad de respuesta mediante simulacros de alta fidelidad. Estresamos sus sistemas y personas para garantizar que la ejecución sea impecable.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+            <div class="accent-line" style="margin: 0 auto 30px;"></div>
+            <h2>El Diferencial Vantex</h2>
+            <p style="font-size: 22px; line-height: 1.8; color: var(--dark);">A diferencia de las grandes consultoras globales que entregan manuales estáticos, nosotros entregamos <strong>capacidad de supervivencia operativa</strong>. Nuestra metodología se basa en décadas de experiencia táctica donde la teoría no existía, solo la resolución de incidentes críticos en tiempo real.</p>
+        </div>
+    </section>
+
+    <div class="sectors">
+        <p style="margin-bottom: 30px; font-weight: 600; font-size: 12px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase;">Sectores de Intervención</p>
+        <div class="sectors-list">
+            <span>ENERGÍA & UTILITIES</span>
+            <span>INDUSTRIA PESADA</span>
+            <span>INFRAESTRUCTURA PORTUARIA</span>
+            <span>SECTOR PÚBLICO CRÍTICO</span>
+            <span>LOGÍSTICA ESTRATÉGICA</span>
+        </div>
     </div>
-    <div class="service-card">
-      <h3>C-Suite & Executive Protocols</h3>
-      <p>Command architecture and decision-making design under extreme pressure for Crisis Committees and Senior Management.</p>
-      <span class="price-tag">Authority Criterion</span>
+
+    <section class="bg-light">
+        <div class="direction-section">
+            <div class="dir-image"></div>
+            <div class="dir-text">
+                <div class="accent-line"></div>
+                <h2>Dirección Estratégica</h2>
+                <span class="dir-title">Iñigo Mendoza | Especialista en Gestión de Crisis</span>
+                <p style="font-size: 18px; margin-bottom: 20px;">Técnico acreditado por el Gobierno Vasco (GT-00333) con más de 27 años de experiencia en la gestión de emergencias y protección de activos críticos.</p>
+                <p>Vantex nace para aportar el criterio técnico y la frialdad operativa necesaria para blindar organizaciones ante lo imprevisible. No somos asesores; somos ingenieros de resiliencia.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <div class="accent-line" style="margin: 0 auto 30px; background: var(--white);"></div>
+        <h2>Blinde su infraestructura hoy.</h2>
+        <p>Solicite una evaluación inicial estratégica de 10 minutos para identificar sus vulnerabilidades críticas.</p>
+        <a href="mailto:tu-email@vantex.es" class="btn">Solicitar Evaluación Inicial</a>
     </div>
-    <div class="service-card">
-      <h3>Critical Stress Simulations</h3>
-      <p>Real-world stress testing to validate the tactical response of your teams. Field-proven validation, not just documentation.</p>
-      <span class="price-tag">Operational Validation</span>
-    </div>
-    <div class="service-card">
-      <h3>Business Continuity</h3>
-      <p>Recovery engineering and strategic maintenance to ensure critical assets remain operational under any circumstance.</p>
-      <span class="price-tag">Continuous Resilience</span>
-    </div>
-  </div>
-</section>
-<section class="contact-form">
-  <h2>Request Strategic Consultation</h2>
-  <p style="margin-bottom: 45px; opacity: 0.8;">Initiate the resilience audit protocol for your organization.</p>
-  <form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
-    <input type="text" name="name" placeholder="Full Name & Position" required><br>
-    <input type="email" name="_replyto" placeholder="Corporate Email" required><br>
-    <textarea name="message" rows="4" placeholder="Briefly describe the critical asset or scenario to evaluate"></textarea><br>
-    <button type="submit" class="submit-btn">SCHEDULE DIAGNOSIS</button>
-  </form>
-</section>
-<footer>VANTEX PROYECT &copy; 2026 | INTERNATIONAL</footer>
+
+    <footer>
+        VANTEX PROYECT &copy; 2026 | EUSKADI · INTERNACIONAL | RESILIENCIA OPERATIVA DE ÉLITE
+    </footer>
+
 </body>
 </html>
