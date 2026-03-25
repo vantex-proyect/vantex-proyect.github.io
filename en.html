@@ -1,21 +1,12 @@
-<section class="cta-section" style="background: var(--dark); color: var(--white); text-align: center; padding: 80px 20px;">
+<section class="cta-section">
     <div class="accent-line" style="margin: 0 auto 30px; background: var(--white);"></div>
-    <h2>Request Your Strategic Assessment</h2>
-    <p>Complete this form to schedule a 10-minute initial review and identify critical vulnerabilities.</p>
-    
-    <form action="https://formspree.io/f/mlgpwdkk" method="POST" style="max-width: 500px; margin: 40px auto; text-align: left;">
-        <label for="name" style="display:block; margin-bottom:10px; font-weight:600;">Name</label>
-        <input type="text" id="name" name="name" required style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:4px;">
+    <h2>Protect your infrastructure today.</h2>
+    <p>Request a 10-minute strategic initial assessment to identify your critical vulnerabilities.</p>
 
-        <label for="company" style="display:block; margin-bottom:10px; font-weight:600;">Company</label>
-        <input type="text" id="company" name="company" required style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:4px;">
-
-        <label for="email" style="display:block; margin-bottom:10px; font-weight:600;">Email</label>
-        <input type="email" id="email" name="email" required style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:4px;">
-
-        <label for="message" style="display:block; margin-bottom:10px; font-weight:600;">Message</label>
-        <textarea id="message" name="message" rows="5" style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #ccc; border-radius:4px;"></textarea>
-
-        <button type="submit" style="background: var(--accent); color: var(--white); padding: 15px 40px; font-weight:600; text-transform: uppercase; letter-spacing:2px; border:none; border-radius:4px; cursor:pointer;">Send</button>
+    <form action="https://formspree.io/f/mlgpwdkk" method="POST" style="max-width: 600px; margin: 30px auto; display: flex; flex-direction: column; gap: 20px;">
+        <input type="text" name="name" placeholder="Your Name" required style="padding: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+        <input type="email" name="email" placeholder="Your Email" required style="padding: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;">
+        <textarea name="message" placeholder="Your Message" required rows="5" style="padding: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px;"></textarea>
+        <button type="submit" class="btn">Request Initial Assessment</button>
     </form>
 </section>
