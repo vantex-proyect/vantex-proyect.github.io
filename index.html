@@ -14,7 +14,7 @@
             --text: #1a1a1a;  
             --light-bg: #f8f8f8; 
             --white: #ffffff;
-            --spacing: 120px;
+            --spacing-lg: 140px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,11 +23,11 @@
         /* Navegación */
         nav { padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; position: absolute; width: 100%; z-index: 100; }
         .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; letter-spacing: 5px; color: var(--white); text-decoration: none; }
-        .lang { font-size: 12px; letter-spacing: 2px; }
-        .lang a { color: var(--white); text-decoration: none; margin: 0 10px; opacity: 0.8; }
-        .lang a:hover { color: var(--accent); opacity: 1; }
+        .lang { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.8); }
+        .lang a { color: var(--white); text-decoration: none; margin: 0 10px; transition: 0.3s; }
+        .lang a:hover { color: var(--accent); }
 
-        /* Hero */
+        /* Hero Section */
         header {
             height: 100vh;
             display: flex;
@@ -35,49 +35,51 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
             color: var(--white);
             padding: 0 20px;
         }
-        .badge { border: 1px solid var(--accent); color: var(--accent); padding: 10px 25px; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 35px; font-weight: 600; }
-        header h1 { font-family: 'Playfair Display', serif; font-size: clamp(38px, 6vw, 72px); line-height: 1.1; margin-bottom: 30px; max-width: 1100px; }
-        header p { font-size: clamp(18px, 2.5vw, 24px); font-weight: 300; max-width: 800px; opacity: 0.95; margin-bottom: 40px; }
-        .hero-statement { font-style: italic; font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.2rem; }
+        .badge { border: 1px solid var(--accent); color: var(--accent); padding: 10px 25px; font-size: 12px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 35px; font-weight: 600; }
+        header h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 75px); line-height: 1.1; margin-bottom: 30px; max-width: 1100px; }
+        header p { font-size: clamp(18px, 2.5vw, 24px); font-weight: 300; max-width: 800px; opacity: 0.95; margin-bottom: 50px; }
+        .hero-statement { font-style: italic; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--accent); letter-spacing: 1px; }
 
-        /* Secciones */
-        section { padding: var(--spacing) 60px; max-width: 1300px; margin: 0 auto; }
+        /* Estructura de Secciones */
+        section { padding: var(--spacing-lg) 60px; max-width: 1300px; margin: 0 auto; }
         .accent-line { width: 60px; height: 3px; background: var(--accent); margin-bottom: 35px; }
-        h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 50px); color: var(--dark); margin-bottom: 50px; line-height: 1.2; }
+        h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px); color: var(--dark); margin-bottom: 60px; line-height: 1.2; font-weight: 700; }
 
         /* Problema e Impacto */
-        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-        .problem-text p { font-size: 20px; margin-bottom: 30px; }
-        .impact-box { padding: 50px; background: var(--dark); color: var(--white); border-left: 6px solid var(--accent); }
-        .impact-box h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 20px; }
+        .problem-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 90px; align-items: start; }
+        .problem-text p { font-size: 21px; color: #111; margin-bottom: 35px; }
+        .impact-box { padding: 60px; background: var(--dark); color: var(--white); border-left: 6px solid var(--accent); }
+        .impact-box h3 { font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 25px; }
 
-        /* Tarjetas de Valor */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 50px; }
-        .card { padding: 50px 40px; background: var(--light-bg); border-top: 4px solid var(--accent); transition: 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); background: var(--white); }
-        .card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 20px; }
+        /* Tarjetas de Servicio */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 45px; margin-top: 60px; }
+        .card { padding: 60px 45px; background: var(--light-bg); border-top: 5px solid var(--accent); transition: 0.4s ease; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); background: var(--white); }
+        .card h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 25px; color: var(--dark); }
 
-        /* Dirección */
-        .dir-section { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center; }
-        .dir-image { width: 100%; height: 500px; background: #eee url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071') center/cover; filter: grayscale(100%); }
+        /* Dirección / Marca Personal */
+        .direction-section { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 70px; align-items: center; }
+        .dir-image { width: 100%; height: 550px; background: #ddd url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071') center/cover; filter: grayscale(100%); }
+        .dir-title { color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 35px; display: block; }
 
-        /* CTA Final - Contraste Negro Puro */
-        .cta-section { background: var(--dark); color: var(--white); text-align: center; padding: 120px 20px; }
-        .cta-section h2 { color: var(--white); margin-bottom: 20px; }
-        .btn { display: inline-block; padding: 22px 50px; background: var(--accent); color: var(--white); text-decoration: none; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 14px; transition: 0.3s; margin-top: 30px; border: none; cursor: pointer; }
-        .btn:hover { background: #b08d4a; transform: translateY(-3px); }
+        /* CTA Final */
+        .cta-section { background: var(--dark); color: var(--white); text-align: center; padding: 140px 20px; }
+        .cta-section h2 { color: var(--white); margin-bottom: 25px; }
+        .btn { display: inline-block; padding: 24px 60px; background: var(--accent); color: var(--white); text-decoration: none; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 14px; transition: 0.3s; margin-top: 45px; border: none; cursor: pointer; }
+        .btn:hover { background: #b08d4a; transform: translateY(-5px); }
 
-        footer { padding: 60px; text-align: center; font-size: 11px; letter-spacing: 2px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; }
+        footer { padding: 80px; text-align: center; font-size: 11px; letter-spacing: 2.5px; color: #999; text-transform: uppercase; border-top: 1px solid #eee; }
 
-        @media (max-width: 900px) {
-            nav { padding: 20px; }
-            section { padding: 80px 20px; }
-            .problem-grid, .dir-section { grid-template-columns: 1fr; gap: 40px; }
+        @media (max-width: 1024px) {
+            nav { padding: 20px 30px; }
+            section { padding: 100px 30px; }
+            .problem-grid, .direction-section { grid-template-columns: 1fr; gap: 50px; }
+            header h1 { font-size: 45px; }
         }
     </style>
 </head>
@@ -91,10 +93,10 @@
     </nav>
 
     <header>
-        <div class="badge">Resiliencia Operativa de Élite</div>
+        <div class="badge">Estrategia en Resiliencia Operativa de Élite</div>
         <h1>Donde la mayoría ve continuidad, nosotros detectamos el fallo operativo.</h1>
         <p>Garantizamos la supervivencia de infraestructuras críticas identificando vulnerabilidades sistémicas bajo condiciones de presión real.</p>
-        <div class="hero-statement">"La mayoría no ha probado su capacidad de respuesta bajo un escenario de fallo real."</div>
+        <div class="hero-statement">"La mayoría de las organizaciones no han probado su capacidad de respuesta bajo un escenario de fallo real."</div>
     </header>
 
     <section>
@@ -102,13 +104,4 @@
             <div class="problem-text">
                 <div class="accent-line"></div>
                 <h2>El riesgo no es la crisis,<br>es la falsa sensación de control.</h2>
-                <p>Las auditorías documentales ofrecen una seguridad ilusoria. Vantex interviene donde la consultoría tradicional se detiene: el momento en que el sistema se somete a estrés real.</p>
-            </div>
-            <div class="impact-box">
-                <h3>Impacto Crítico</h3>
-                <p>Un parón operativo de 12 horas en un activo estratégico se traduce en una crisis de escala nacional. Identificamos el punto de ruptura antes de que el mercado lo haga.</p>
-            </div>
-        </div>
-    </section>
-
-    <section style="background: #fafafa; max-width:
+                <p>Las auditorías documentales ofrecen una seguridad ilusoria. Vantex
