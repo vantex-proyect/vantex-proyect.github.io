@@ -1,186 +1,95 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vantex | Ingeniería Operativa de Crisis & Resiliencia</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-
-<style>
-:root {
---accent: #c5a059;
---dark: #0f0f0f;
---text: #333333;
---light: #cfe6f5;
---white: #ffffff;
---spacing-lg: 120px;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-font-family: 'Inter', sans-serif;
-color: var(--text);
-line-height: 1.8;
-background: var(--white);
-}
-
-nav {
-padding: 40px 60px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:absolute;
-width:100%;
-z-index:100;
-}
-
-.logo {
-font-family:'Playfair Display', serif;
-font-size:22px;
-font-weight:700;
-letter-spacing:5px;
-color:white;
-text-decoration:none;
-}
-
-.lang {
-font-size:12px;
-letter-spacing:2px;
-color:rgba(255,255,255,0.7);
-}
-
-.lang a {
-color:white;
-text-decoration:none;
-margin:0 10px;
-}
-
-header {
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover;
-color:white;
-padding:0 20px;
-}
-
-.badge {
-border:1px solid var(--accent);
-color:var(--accent);
-padding:8px 20px;
-font-size:11px;
-letter-spacing:4px;
-margin-bottom:30px;
-}
-
-h1 {
-font-family:'Playfair Display', serif;
-font-size:clamp(40px,6vw,75px);
-margin-bottom:25px;
-}
-
-section {
-padding:var(--spacing-lg) 60px;
-max-width:1300px;
-margin:auto;
-}
-
-.bg-light {
-background:var(--light);
-width:100%;
-}
-
-.accent-line {
-width:50px;
-height:3px;
-background:var(--accent);
-margin-bottom:30px;
-}
-
-.grid-3 {
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:40px;
-}
-
-.card {
-padding:60px 40px;
-background:white;
-border:1px solid #ddd;
-}
-
-.cta-section {
-background:var(--dark);
-color:white;
-padding:120px 20px;
-text-align:center;
-}
-
-form {
-max-width:500px;
-margin:40px auto 0;
-background:#1a1a1a;
-padding:40px;
-}
-
-input, textarea {
-width:100%;
-padding:15px;
-background:#000;
-border:1px solid #333;
-color:white;
-margin-bottom:20px;
-}
-
-.btn {
-width:100%;
-padding:20px;
-background:var(--accent);
-color:white;
-border:none;
-cursor:pointer;
-}
-
-footer {
-padding:60px;
-text-align:center;
-font-size:11px;
-color:#999;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vantex | Ingeniería Operativa de Crisis & Resiliencia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #c5a059; --dark: #0f0f0f; --text: #333333; --light: #cfe6f5; --white: #ffffff; --spacing-lg: 120px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.8; background: var(--white); -webkit-font-smoothing: antialiased; }
+        nav { padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; position: absolute; width: 100%; z-index: 100; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; letter-spacing: 5px; color: var(--white); text-decoration: none; }
+        .lang { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.7); }
+        .lang a { color: var(--white); text-decoration: none; margin: 0 10px; transition: 0.3s; }
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat; color: var(--white); padding: 0 20px; }
+        .badge { border: 1px solid var(--accent); color: var(--accent); padding: 8px 20px; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; font-weight: 600; }
+        header h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 75px); line-height: 1.1; margin-bottom: 25px; max-width: 1100px; }
+        section { padding: var(--spacing-lg) 60px; max-width: 1300px; margin: 0 auto; }
+        .bg-light { background-color: var(--light); width: 100%; max-width: 100%; }
+        .accent-line { width: 50px; height: 3px; background: var(--accent); margin-bottom: 30px; }
+        h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px); color: var(--dark); margin-bottom: 50px; line-height: 1.2; }
+        .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .impact-box { padding: 50px; background: var(--dark); color: var(--white); border-left: 6px solid var(--accent); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .card { padding: 60px 40px; background: var(--white); border: 1px solid #ddd; box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .direction-section { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center; }
+        .dir-image { width: 100%; height: 500px; background: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071') center/cover; filter: grayscale(100%); }
+        .cta-section { background: var(--dark); color: var(--white); padding: 120px 20px; text-align: center; }
+        form { max-width: 500px; margin: 40px auto 0; text-align: left; background: #1a1a1a; padding: 40px; border: 1px solid #333; }
+        label { display: block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; color: var(--accent); font-weight: 600; }
+        input, textarea { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; margin-bottom: 25px; font-family: inherit; outline: none; }
+        .btn { display: block; width: 100%; padding: 20px; background: var(--accent); color: var(--white); border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; text-align: center; text-decoration: none; }
+        footer { padding: 60px; text-align: center; font-size: 11px; color: #999; text-transform: uppercase; }
+        @media (max-width: 900px) { .problem-grid, .direction-section { grid-template-columns: 1fr; } section { padding: 60px 20px; } }
+    </style>
 </head>
-
 <body>
-
-<nav>
-<a href="./index.html" class="logo">VANTEX</a>
-<div class="lang"><b>ES</b> | <a href="./en.html">EN</a></div>
-</nav>
-
-<header>
-<div class="badge">Estrategia en Resiliencia Operativa de Élite</div>
-<h1>Donde la mayoría ve continuidad, nosotros detectamos el fallo operativo.</h1>
-</header>
-
-<div class="cta-section">
-<h2>Blinde su infraestructura hoy.</h2>
-
-<form action="https://formspree.io/f/mlgpwdkk" method="POST">
-<input type="email" name="email" placeholder="Email corporativo" required>
-<textarea name="message" placeholder="Activo crítico / mensaje" required></textarea>
-<button class="btn">Enviar Solicitud</button>
-</form>
-
-</div>
-
-<footer>VANTEX PROJECT © 2026</footer>
-
+    <nav><a href="index.html" class="logo">VANTEX</a><div class="lang"><b>ES</b> | <a href="en.html">EN</a></div></nav>
+    <header>
+        <div class="badge">Estrategia en Resiliencia Operativa de Élite</div>
+        <h1>Donde la mayoría ve continuidad, nosotros detectamos el fallo operativo.</h1>
+        <p style="color:white; opacity:0.9; font-size:24px; max-width:800px; margin-bottom:40px;">Garantizamos la supervivencia de infraestructuras críticas identificando vulnerabilidades sistémicas bajo condiciones de presión real.</p>
+    </header>
+    <section>
+        <div class="problem-grid">
+            <div class="problem-text">
+                <div class="accent-line"></div>
+                <h2>El riesgo no es la crisis,<br>es la falsa sensación de control.</h2>
+                <p>Las auditorías documentales ofrecen una seguridad ilusoria. Vantex interviene cuando el sistema se somete a estrés real.</p>
+            </div>
+            <div class="impact-box">
+                <h3>Impacto Crítico</h3>
+                <p>Un parón de 12 horas en un activo estratégico es una crisis de gran escala. Identificamos el punto de ruptura antes que nadie.</p>
+            </div>
+        </div>
+    </section>
+    <div class="bg-light">
+        <section>
+            <div class="accent-line"></div>
+            <h2>Nuestra Propuesta de Valor</h2>
+            <div class="grid-3">
+                <div class="card"><h3>Auditoría de Fallo Real</h3><p>Identificamos fallos operativos que solo emergen bajo presión extrema.</p></div>
+                <div class="card"><h3>Arquitectura de Mando</h3><p>Diseñamos protocolos para que la cadena de mando no colapse en el caos.</p></div>
+                <div class="card"><h3>Simulaciones de Stress</h3><p>Validamos su capacidad mediante simulacros de alta fidelidad.</p></div>
+            </div>
+        </section>
+    </div>
+    <div class="bg-light" style="background:white">
+        <section>
+            <div class="direction-section">
+                <div class="dir-image"></div>
+                <div class="dir-text">
+                    <div class="accent-line"></div>
+                    <h2>Dirección Estratégica</h2>
+                    <p><strong>Iñigo Mendoza | Especialista en Gestión de Crisis</strong></p>
+                    <p>Técnico acreditado (GT-00333) con más de 27 años de experiencia en protección de activos críticos.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="cta-section">
+        <div class="accent-line" style="margin: 0 auto 30px; background: white;"></div>
+        <h2>Blinde su infraestructura hoy.</h2>
+        <form action="https://formspree.io/f/mlgpwdkk" method="POST">
+            <label>Email Corporativo</label><input type="email" name="email" required>
+            <label>Mensaje / Activo Crítico</label><textarea name="message" required style="height:100px;"></textarea>
+            <button type="submit" class="btn">Enviar Solicitud</button>
+        </form>
+    </div>
+    <footer>VANTEX PROJECT &copy; 2026 | EUSKADI · INTERNACIONAL</footer>
 </body>
 </html>
