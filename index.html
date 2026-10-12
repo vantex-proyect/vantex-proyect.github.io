@@ -16,7 +16,7 @@
         .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; letter-spacing: 5px; color: var(--white); text-decoration: none; }
         .lang { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.7); }
         .lang a { color: var(--white); text-decoration: none; margin: 0 10px; transition: 0.3s; }
-        header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat; color: var(--white); padding: 120px 20px 60px; }
+        header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1768128834406-f5b1b962af9d?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat; background-color: #0f0f0f; color: var(--white); padding: 120px 20px 60px; }
         .badge { border: 1px solid var(--accent); color: var(--accent); padding: 8px 20px; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; font-weight: 600; }
         header h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 75px); line-height: 1.1; margin-bottom: 25px; max-width: 1100px; }
         .hero-creds { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-top: 30px; }
@@ -35,7 +35,11 @@
         .card .ref { display: block; margin-top: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
         .card ul { margin-top: 15px; padding-left: 18px; }
         .direction-section { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center; }
-        .dir-image { width: 100%; height: 500px; background: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071') center/cover; filter: grayscale(100%); }
+        .cred-panel { background: var(--dark); color: var(--white); border-left: 6px solid var(--accent); padding: 50px 45px; display: grid; gap: 28px; }
+        .cred-big { font-family: 'Playfair Display', serif; font-size: 96px; line-height: 0.9; color: var(--accent); }
+        .cred-big span { display: block; font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-top: 14px; line-height: 1.6; }
+        .cred-item { border-top: 1px solid #333; padding-top: 16px; font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+        .cred-item b { display: block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
         .dir-text ul { margin-top: 20px; padding-left: 18px; }
         .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; counter-reset: paso; list-style: none; }
         .steps li { counter-increment: paso; border-top: 1px solid #ccc; padding-top: 25px; }
@@ -49,10 +53,11 @@
         input, textarea, select { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; margin-bottom: 25px; font-family: inherit; font-size: 15px; outline: none; }
         input:focus, textarea:focus, select:focus { border-color: var(--accent); }
         .btn { display: block; width: 100%; padding: 20px; background: var(--accent); color: var(--white); border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; text-align: center; text-decoration: none; }
+        .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; letter-spacing: 0; text-transform: none; color: #ccc; font-weight: 400; margin-bottom: 25px; } .consent input { width: auto; margin: 4px 0 0; } .consent a, footer a { color: var(--accent); }
         .btn-inline { display: inline-block; width: auto; padding: 18px 40px; margin-top: 10px; }
         .contact-note { font-size: 12px; color: #999; margin-top: 20px; text-align: center; letter-spacing: 1px; }
         footer { padding: 60px; text-align: center; font-size: 11px; color: #999; text-transform: uppercase; }
-        @media (max-width: 900px) { .problem-grid, .direction-section { grid-template-columns: 1fr; gap: 40px; } section { padding: 60px 20px; } nav { padding: 25px 20px; } .steps { grid-template-columns: 1fr 1fr; } .impact-box { padding: 35px 25px; } .card { padding: 40px 25px; } .dir-image { height: 320px; } }
+        @media (max-width: 900px) { .problem-grid, .direction-section { grid-template-columns: 1fr; gap: 40px; } section { padding: 60px 20px; } nav { padding: 25px 20px; } .steps { grid-template-columns: 1fr 1fr; } .impact-box { padding: 35px 25px; } .card { padding: 40px 25px; } .cred-panel { padding: 35px 25px; } .cred-big { font-size: 72px; } }
         @media (max-width: 560px) { .logo { font-size: 16px; letter-spacing: 3px; }  .form-row, .steps { grid-template-columns: 1fr; } form { padding: 25px; } footer { padding: 40px 20px; } }
     </style>
 </head>
@@ -139,17 +144,18 @@
     <div class="bg-light" style="background:white">
         <section style="padding-top:0">
             <div class="direction-section">
-                <div class="dir-image"></div>
+                <div class="cred-panel" aria-label="Credenciales">
+                    <div class="cred-big">28<span>años en emergencias sanitarias en Gipuzkoa</span></div>
+                    <div class="cred-item"><b>GT-00333</b>Técnico acreditado por el Gobierno Vasco para elaborar planes de autoprotección</div>
+                    <div class="cred-item"><b>Director de Seguridad</b>Habilitado para dirigir departamentos de seguridad</div>
+                    <div class="cred-item"><b>Técnico Superior en PRL</b>Prevención de Riesgos Laborales</div>
+                </div>
                 <div class="dir-text">
                     <div class="accent-line"></div>
                     <h2>Dirección</h2>
                     <p><strong>Iñigo Mendoza | Director de Seguridad · Técnico acreditado GT-00333</strong></p>
                     <p>28 años en emergencias sanitarias en Gipuzkoa, en primera línea. He visto qué funciona cuando todo falla y qué se queda solo en papel. Esa experiencia es la que aplico en cada plan y en cada simulacro.</p>
-                    <ul>
-                        <li>Técnico acreditado por el Gobierno Vasco para elaborar planes de autoprotección (GT-00333)</li>
-                        <li>Director de Seguridad</li>
-                        <li>Técnico Superior en Prevención de Riesgos Laborales</li>
-                    </ul>
+                    <p>Trabajo cada encargo personalmente: usted habla siempre con quien firma el plan y dirige el simulacro.</p>
                 </div>
             </div>
         </section>
@@ -180,12 +186,13 @@
                 <option>Otra consulta</option>
             </select>
             <label for="mensaje">Su caso</label><textarea id="mensaje" name="message" required style="height:110px;" placeholder="Tipo de instalación, número aproximado de personas, plazos…"></textarea>
+            <label class="consent"><input type="checkbox" name="acepta_privacidad" value="si" required> <span>He leído y acepto la <a href="aviso-legal.html#privacidad">política de privacidad</a>.</span></label>
             <button type="submit" class="btn">Solicitar diagnóstico</button>
         </form>
         <!-- TELÉFONO: cuando tengas la línea de empresa, sustituir esta línea por: Teléfono y WhatsApp: 6XX XXX XXX · -->
         <p class="contact-note">Atención de lunes a viernes, 9:00–14:00 · Gipuzkoa y Euskadi</p>
     </div>
 
-    <footer>VANTEX PROYECT &copy; 2026 | IÑIGO MENDOZA · GIPUZKOA · EUSKADI</footer>
+    <footer>VANTEX PROYECT &copy; 2026 | IÑIGO MENDOZA · GIPUZKOA · EUSKADI · <a href="aviso-legal.html">Aviso legal y privacidad</a></footer>
 </body>
 </html>
