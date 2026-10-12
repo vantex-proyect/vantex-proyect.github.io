@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        :root { --accent: #c5a059; --dark: #0f0f0f; --text: #333333; --light: #cfe6f5; --white: #ffffff; --spacing-lg: 120px; }
+        :root { --accent: #f26a1b; --accent-ink: #b8450a; --dark: #0f0f0f; --text: #333333; --light: #f3f2ef; --white: #ffffff; --spacing-lg: 120px; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.8; background: var(--white); -webkit-font-smoothing: antialiased; }
         nav { padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; position: absolute; width: 100%; z-index: 100; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; letter-spacing: 5px; color: var(--white); text-decoration: none; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; letter-spacing: 5px; color: var(--accent); text-decoration: none; }
         .lang { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.7); }
         .lang a { color: var(--white); text-decoration: none; margin: 0 10px; transition: 0.3s; }
         header { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1768128834406-f5b1b962af9d?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat; background-color: #0f0f0f; color: var(--white); padding: 120px 20px 60px; }
@@ -32,7 +32,7 @@
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr)); gap: 40px; }
         .card { padding: 60px 40px; background: var(--white); border: 1px solid #ddd; box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
         .card.featured { background: var(--dark); color: var(--white); border-color: var(--dark); border-left: 6px solid var(--accent); }
-        .card .ref { display: block; margin-top: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+        .card .ref { display: block; margin-top: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-ink); font-weight: 600; } .card.featured .ref { color: var(--accent); }
         .card ul { margin-top: 15px; padding-left: 18px; }
         .direction-section { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center; }
         .cred-panel { background: var(--dark); color: var(--white); border-left: 6px solid var(--accent); padding: 50px 45px; display: grid; gap: 28px; }
@@ -52,8 +52,9 @@
         label { display: block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; color: var(--accent); font-weight: 600; }
         input, textarea, select { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; margin-bottom: 25px; font-family: inherit; font-size: 15px; outline: none; }
         input:focus, textarea:focus, select:focus { border-color: var(--accent); }
-        .btn { display: block; width: 100%; padding: 20px; background: var(--accent); color: var(--white); border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; text-align: center; text-decoration: none; }
-        .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; letter-spacing: 0; text-transform: none; color: #ccc; font-weight: 400; margin-bottom: 25px; } .consent input { width: auto; margin: 4px 0 0; } .consent a, footer a { color: var(--accent); }
+        .btn { display: block; width: 100%; padding: 20px; background: var(--accent); color: #0f0f0f; border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; text-align: center; text-decoration: none; }
+        .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; letter-spacing: 0; text-transform: none; color: #ccc; font-weight: 400; margin-bottom: 25px; } .consent input { width: auto; margin: 4px 0 0; } .consent a { color: var(--accent); } footer a { color: var(--accent-ink); }
+        .btn:hover { background: #ff7a2e; }
         .btn-inline { display: inline-block; width: auto; padding: 18px 40px; margin-top: 10px; }
         .contact-note { font-size: 12px; color: #999; margin-top: 20px; text-align: center; letter-spacing: 1px; }
         footer { padding: 60px; text-align: center; font-size: 11px; color: #999; text-transform: uppercase; }
