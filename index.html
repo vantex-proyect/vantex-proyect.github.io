@@ -57,8 +57,7 @@
         .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
         .card { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--ink); padding: 34px 30px; }
         .card p { color: var(--muted); }
-        .grid-3 .card:last-child { grid-column: 1 / -1; }
-        .card.featured { grid-row: span 2; background: var(--ink); border-color: var(--ink); border-top-color: var(--orange); color: rgba(255,255,255,0.85); }
+                .card.featured { grid-row: span 3; background: var(--ink); border-color: var(--ink); border-top-color: var(--orange); color: rgba(255,255,255,0.85); }
         .card.featured h3 { color: var(--white); font-size: 28px; }
         .card.featured p { color: rgba(255,255,255,0.8); }
         .card ul { list-style: none; margin-top: 18px; display: grid; gap: 10px; }
@@ -216,6 +215,11 @@
                     <span class="ref">Obligatorio según aforo y espacio</span>
                 </div>
                 <div class="card">
+                    <h3>Formación en su entorno real</h3>
+                    <p>Formamos a su equipo de emergencias en su propio centro de trabajo, con sus riesgos, sus vías de evacuación y sus medios: primeros auxilios, actuación ante emergencias y manejo de extintores. Terminamos con un simulacro en el que cada persona practica lo aprendido.</p>
+                    <span class="ref">Anexo II · Implantación y reciclaje del plan</span>
+                </div>
+                <div class="card">
                     <h3>Diagnóstico de cumplimiento</h3>
                     <p>Revisión de su situación real frente a sus obligaciones, con un informe claro de lo que cumple, lo que falta y por dónde empezar. Se descuenta si contrata la asesoría.</p>
                 </div>
@@ -284,6 +288,7 @@
                 <option>Diagnóstico de cumplimiento</option>
                 <option>Plan de autoprotección</option>
                 <option>Simulacro</option>
+                <option>Formación en su entorno real</option>
                 <option>DRP para un evento</option>
                 <option>Otra consulta</option>
             </select>
