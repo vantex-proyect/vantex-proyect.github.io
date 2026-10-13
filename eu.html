@@ -57,8 +57,7 @@
         .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
         .card { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--ink); padding: 34px 30px; }
         .card p { color: var(--muted); }
-        .grid-3 .card:last-child { grid-column: 1 / -1; }
-        .card.featured { grid-row: span 2; background: var(--ink); border-color: var(--ink); border-top-color: var(--orange); color: rgba(255,255,255,0.85); }
+                .card.featured { grid-row: span 3; background: var(--ink); border-color: var(--ink); border-top-color: var(--orange); color: rgba(255,255,255,0.85); }
         .card.featured h3 { color: var(--white); font-size: 28px; }
         .card.featured p { color: rgba(255,255,255,0.8); }
         .card ul { list-style: none; margin-top: 18px; display: grid; gap: 10px; }
@@ -216,6 +215,11 @@
                     <span class="ref">Derrigorrezkoa, edukieraren eta espazioaren arabera</span>
                 </div>
                 <div class="card">
+                    <h3>Prestakuntza zure benetako ingurunean</h3>
+                    <p>Zure larrialdi taldea zure lantokian bertan prestatzen dugu, zure arriskuekin, ebakuazio-bideekin eta baliabideekin: lehen sorospenak, larrialdietako jarduna eta itzalgailuen erabilera. Simulakro batekin amaitzen dugu, pertsona bakoitzak ikasitakoa praktikan jar dezan.</p>
+                    <span class="ref">II. eranskina · Planaren ezarpena eta birziklapena</span>
+                </div>
+                <div class="card">
                     <h3>Betetze-diagnostikoa</h3>
                     <p>Zure egoera errealaren berrikuspena, zure betebeharrekin alderatuta, txosten argi batekin: zer betetzen den, zer falta den eta nondik hasi. Aholkularitza kontratatzen baduzu, kostua deskontatu egiten da.</p>
                 </div>
@@ -284,6 +288,7 @@
                 <option>Betetze-diagnostikoa</option>
                 <option>Autobabes plana</option>
                 <option>Simulakroa</option>
+                <option>Prestakuntza zure benetako ingurunean</option>
                 <option>Ekitaldi baterako DRPa</option>
                 <option>Beste kontsulta bat</option>
             </select>
